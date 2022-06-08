@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Aprende Python a tu propio ritmo, de forma sencilla.</h2>
+                        <p class="lead">Con nuestros cursos gratuitos puedes aprender lenguajes como Python al ritmo que tú quieras, y como quieras.</p>
+                        <p class="mb-0">En nuestro mundo actual lleno de tecnología, "ingeniero de sistemas" o "ingeniero de software" son dos profesiones extremadamente importantes para el futuro, creemos que tener estas habilidades de programador te resultará extremadamente útil en tu carrera profesional. Aunque en estos cursos aprenderás principalmente Python, también podrás aprender las básicas de otros lenguajes como <strong>HTML y CSS</strong></p>
+                        <br>
+                        <img class="img-fluid" src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_724,h_483,c_fill,g_faces/https%3A%2F%2Fwww.gcu.edu%2Fsites%2Fdefault%2Ffiles%2F2020-09%2Fprogramming.jpg" alt="..." />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>¿Por qué Python?</h2>
+                        <p class="lead">Proporcionamos aprendizajes sobre varios lenguajes, pero nuestro principal enfoque es Python.</p>
+                        <p class="mb-0">La razón por la que principalmente aprenderás Python es porque es un lenguaje muy accesible para principantes, ya que es un lenguaje bastante verboso, por lo que incluso para un principiante puede resultar agradable para la vista. Es un lenguaje de programación fácil de aprender pero difícil de dominar. Actualmente es uno de los lenguajes de programación con más auge debido a la cantidad de cosas que te ofrece, por ejemplo, con Python y Django puedes diseñar hermosas páginas web.</p>
+                        <br>
+                        <p class = "mb-0">Estas son algunas de las compañías que utilizan Python hoy en día:</p>
+                        <br>
+                        <ul>
+                            <li><strong>Netflix</strong></li>
+                            <br>
+                            <p class="mb-0">El sitio Web de streaming para películas y series más popular del mundo utiliza Python debido a las increíbles librerías que vienen con él, y los syntax limpios y expresivos que caracterizan el lenguaje.</p>
+                            <br>
+                            <img class="img-fluid" src="https://images1.autocasion.com/actualidad/wp-content/uploads/2020/03/netflix-apertura.png" alt="..." />
+                            <br>
+                            <br>   
+                            <li><strong>Google</strong></li>
+                            <br>                   
+                            <p class="mb-0">Otro de los sitios web más populares del mundo, Google, también fue codificado en Python. Python y su framework complementario permiten a los desarrolladores a cambiar el tráfico y manejar los requisitos de búsqueda. </p>
+                            <br>
+                            <img class="img-fluid" src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2018/09/21/5fa4508db4c13.r_d.746-384-0.jpeg" alt="..." />
+                            <br>
+                            <br>
+                            <li><strong>Youtube</strong></li>
+                            <br>
+                            <p class="mb-0">La mayoría de Youtube, debatiblemente el sitio web de creación de contenido más famoso actualmente, fue escrito en Python, ya que ofrece múltiples liberías que hacen que la experiencia para el usuario sea más interactiva. Debido a la manera en la que fue programado, simplifica el proceso de subir videos a la red, descargarlos y compartirlos.</p>
+                            <br>
+                            <img class="img-fluid" src="https://microsofters.com/wp-content/uploads/2020/08/youtube.jpg" alt="..." />
+                            <br>
+                            <br>
+                            <li><strong>Instagram</strong></li>
+                            <br>
+                            <p class="mb-0">Una de las redes sociales más populares de hoy en día, Instagram, utiliza Python. La interfaz de Instagram, con su diseño simple, limpio y amigable para usuarios nuevos se debe a Python.</p>
+                            <br>
+                            <img class="img-fluid" src="https://hipertextual.com/wp-content/uploads/2021/02/instagram-eliminado-recientemente-2.png" alt="..." />
+                            <br>
+                            <br>
+                            <li><strong>Uber</strong></li>
+                            <br>
+                            <p clas="mb-0">La aplicación para obtener transporte a precios asequibles de manera rápida y sencilla utilizó frameworks como Django y Flask para diseñar su inovadora aplicación. Por lo que una gran parte de su código es en Python.</p>
+                            <br>
+                            <img class="img-fluid" src="https://mistramitesyrequisitos.com/wp-content/uploads/2020/06/uber-logo-map-1.jpg" alt="..." />
+                            <br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1400/1*a9-f3EFhEi6dftgQntIxLA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Pide ayuda si lo necesitas.</h2>
+                        <p class="lead">Esto es mucho más que solamente tutoriales e informaciones, si no que también somos una comunidad, contamos con un foro donde puedes realizar cualquier tipo de preguntas sobre la programación, y cualquier miembro de la comunidad que tenga conocimiento sobre el tema puede aportar una solución o aconsejarte, <strong>No estás solo</strong>.</p>
+                        <br>
+                        <p class="mb-0">Puedes utilizar nuestro foro para pedir ayuda a otros miembros de la comunidad respondiendo sus preguntas. No hay preguntas tontas, siéntete libre para preguntar cualquier cosa, somos una comunidad amigable y solidaria.</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://i.imgur.com/VVk3YA3.jpg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2><center>¡Regístrate ya!</center></h2>
+                        <p class="lead"><center>Te esperamos con ansias.</center></p>
+                        <br>
+                        <center><button class="register-button" onclick="location.href='/register/'" type="button">
+                                <center>Registrarse</center></button></center> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-interacting"></span><h1><span class="section-number">14. </span>Edición de entrada interactiva y sustitución de historial<a class="headerlink" href="#interactive-input-editing-and-history-substitution" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Algunas versiones del intérprete de Python permiten editar la línea de entrada actual, y sustituir en base al historial, de forma similar a las capacidades del intérprete de comandos <em>Korn</em> y el GNU bash.  Esto se implementa con la biblioteca <a class="reference external" href="https://tiswww.case.edu/php/chet/readline/rltop.html">GNU Readline</a>, que soporta varios estilos de edición.  Esta biblioteca tiene su propia documentación la cuál no vamos a duplicar aquí.</p>
+                        <div class="section" id="tab-completion-and-history-editing">
+                        <span id="tut-keybindings"></span><h2><span class="section-number">14.1. </span>Autocompletado con tab e historial de edición<a class="headerlink" href="#tab-completion-and-history-editing" title="Enlazar permanentemente con este título">¶</a></h2>
+                        <p>El autocompletado de variables y nombres de módulos es <a class="reference internal" href="../library/site.html#rlcompleter-config"><span class="std std-ref">automatically enabled</span></a> al iniciar el intérprete, por lo tanto la tecla <kbd class="kbd docutils literal notranslate">Tab</kbd> invoca la función de autocompletado; ésta mira en los nombres de sentencia, las variables locales y los nombres de módulos disponibles. Para expresiones con puntos como <code class="docutils literal notranslate"><span class="pre">string.a</span></code>, va a evaluar la expresión hasta el <code class="docutils literal notranslate"><span class="pre">'.'</span></code> final y entonces sugerir autocompletado para los atributos del objeto resultante. Nota que esto quizás ejecute código de aplicaciones definidas si un objeto con un método <code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code> es parte de la expresión. La configuración por omisión también guarda tu historial en un archivo llamado <code class="file docutils literal notranslate"><span class="pre">.python_history</span></code> en tu directorio de usuario. El historial estará disponible durante la próxima sesión interactiva del intérprete.</p>
+                        </div>
+                        <div class="section" id="alternatives-to-the-interactive-interpreter">
+                        <span id="tut-commentary"></span><h2><span class="section-number">14.2. </span>Alternativas al intérprete interactivo<a class="headerlink" href="#alternatives-to-the-interactive-interpreter" title="Enlazar permanentemente con este título">¶</a></h2>
+                        <p>Esta funcionalidad es un paso enorme hacia adelante comparado con versiones anteriores del interprete; de todos modos, quedan pendientes algunos deseos: sería bueno que el sangrado correcto se sugiriera en las lineas de continuación (el <em>parser</em> sabe si se requiere un sangrado a continuación). El mecanismo de completado podría usar la tabla de símbolos del intérprete. Un comando para verificar (o incluso sugerir) coincidencia de paréntesis, comillas, etc. también sería útil.</p>
+                        <p>Un intérprete interactivo mejorado alternativo que está dando vueltas desde hace rato es <a class="reference external" href="https://ipython.org/">IPython</a>, que ofrece completado por tab, exploración de objetos, y administración avanzada del historial.  También puede ser configurado en profundidad, e integrarse en otras aplicaciones.  Otro entorno interactivo mejorado similar es <a class="reference external" href="https://www.bpython-interpreter.org/">bpython</a>.</p>
+                        </div>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

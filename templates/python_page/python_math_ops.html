@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <center><h2>Operaciones matemáticas en Python</h2></center>
+                        <br>
+                        <p class="lead">Python tiene capabilidades matemáticas.</p>
+                        <p class="mb-0">Utilizando Python podemos resolver cualquier problema matemático que nos venga a la menta, pues, incluso la libería por defecto de Python incluye un módulo dedicado exclusivamente a las Matemáticas. Este se llama: <i><strong>Math</i></strong></p>
+                        <br>
+                        <p class="mb-0">Por ejemplo, introducimos la siguiente operación en la consolla o Shell de python, obtendremos el resultado de dicha operación.</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/dOdkRXI.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Como pudimos observar, la operación fue resuelta correctamente. Pero esta operación es relativamente simple, pero realmente podemos invocar muchas más operaciones.</p>
+                        <br>
+                        <p class="mb-0">Si volvemos a nuestra consola <strong>(SHELL)</strong>, los siguientes comandos para ver todas las funciones disponibles en este módulo:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/bpM1zog.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Como podemos ver, le dijimos a Python que ponga el módulo <code>math</code> de matemáticas, y luego utilizando un bucle <code>for</code>, establecemos que cada función disponible debe ser mostrada en pantalla con <code>print(method)</code>... entonces al presionar <code>ENTER</code>:</p>
+                        <video width="500" height="600" controls>
+                            <source src="https://i.imgur.com/dio4q5n.mp4" type="video/mp4">
+                        </video>
+                        <br>
+                        <br>
+                        <p class="mb-0">Como podemos ver, exceptuando las funciones simples como <code>* / + -</code> todas las funciones displonibles en el módulo <code>math</code> son devueltas usando el comando <code>print()</code>. Podemos utilizar cualquiera de estas, logaritmos, raíz cuadrada, hay de todo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

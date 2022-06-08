@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-whatnow"></span><h1><span class="section-number">13. </span>¿Y ahora qué?<a class="headerlink" href="#what-now" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Leer este tutorial probablemente reforzó tu interés por usar Python, deberías estar ansioso por aplicar Python a la resolución de tus problemas reales. ¿A dónde deberías ir para aprender más?</p>
+                        <p>Este tutorial forma parte del conjunto de documentación de Python. Algunos otros documentos que encontrarás en este conjunto son:</p>
+                        <ul>
+                        <li><p><a class="reference internal" href="https://docs.python.org/es/3/library/index.html#library-index" target="blank"><span class="std std-ref">La Biblioteca Estándar de Python</span></a>:</p>
+                        <p>Deberías navegar a través de este manual, que da una completa pero breve referencia sobre los tipos, funciones y módulos en la librería estándar. La distribución estándar de Python incluye <em>mucho</em> más código adicional. Hay módulos para leer  buzones Unix,  obtener documentos vía HTTP,  generar números aleatorios, analizar opciones de línea de comandos, escribir programas CGI, comprimir datos y muchas más tareas. Echar una ojeada a la Librería de Referencia te dará una idea de lo que está disponible.</p>
+                        </li>
+                        <li><p><a class="reference internal" href="https://docs.python.org/es/3/installing/index.html#installing-index" target="blank"><span class="std std-ref">Instalando módulos de Python</span></a>  explica como instalar módulos adicionales escritos por otros usuarios de Python.</p></li>
+                        <li><p><a class="reference internal" href="https://docs.python.org/es/3/reference/index.html#reference-index" target="blank"><span class="std std-ref">Referencia del Lenguaje Python</span></a>: Una explicación detallada de la sintaxis y la semántica de Python. Es una lectura pesada, pero es muy útil como guía complete del lenguaje.</p></li>
+                        </ul>
+                        <p>Más recursos sobre Python:</p>
+                        <ul class="simple">
+                        <li><p><a class="reference external" href="https://www.python.org">https://www.python.org</a>: el principal sitio web de Python. Contiene código, documentación y referencias a páginas relacionadas con Python en la web. Este sitio web se refleja en varios lugares del mundo, como Europa, Japón y Australia; un espejo puede ser más rápido que el sitio principal, dependiendo de su ubicación geográfica.</p></li>
+                        <li><p><a class="reference external" href="https://docs.python.org">https://docs.python.org</a>:  Acceso rápido a la documentación de Python.</p></li>
+                        <li><p><a class="reference external" href="https://pypi.org">https://pypi.org</a>: El Python Package Index, apodado previamente la Tienda de Queso <a class="footnote-reference brackets" href="#id2" id="id1">1</a>, es un índice de módulos de Python creados por usuarios que están disponibles para su descarga. Cuando empiezas a distribuir código, lo puedes registrar allí para que otros lo encuentren.</p></li>
+                        <li><p><a class="reference external" href="https://code.activestate.com/recipes/langs/python/">https://code.activestate.com/recipes/langs/python/</a>: El Python Cookbook es una gran colección de ejemplos de código, módulos grandes y scripts útiles. Las contribuciones más notables también están recogidas en un libro titulado Python Cookbook (O’Reilly &amp; Associates, ISBN 0-596-00797-3.)</p></li>
+                        <li><p><a class="reference external" href="http://www.pyvideo.org">http://www.pyvideo.org</a> recoge enlaces a vídeos relacionados con Python provenientes de conferencias y de reuniones de grupos de usuarios.</p></li>
+                        <li><p><a class="reference external" href="https://scipy.org">https://scipy.org</a>: El proyecto de Python científico incluye módulos para el cálculo rápido de operaciones y manipulaciones sobre arrays además de muchos paquetes para cosas como Álgebra Lineal, Transformadas de Fourier, solucionadores de sistemas no-lineales, distribuciones de números aleatorios, análisis estadísticos y otras herramientas.</p></li>
+                        </ul>
+                        <p>Para preguntas relacionadas con Python y reportes de problemas puedes escribir al grupo de noticias <em class="newsgroup">comp.lang.python</em>, o enviarlas a la lista de correo que hay en <a class="reference external" href="mailto:python-list&#37;&#52;&#48;python&#46;org">python-list<span>&#64;</span>python<span>&#46;</span>org</a>. El grupo de noticias y la lista de correo están conectados, por lo que los mensajes enviados a uno serán retransmitidos al otro.  Hay alrededor de cientos de mensajes diarios (con picos de hasta varios cientos), haciendo (y respondiendo) preguntas, sugiriendo nuevas características, y anunciando nuevos módulos. Los archivos de la lista de correos están disponibles en <a class="reference external" href="https://mail.python.org/pipermail/">https://mail.python.org/pipermail/</a>.</p>                        
+                        </dd>
+                        </dl>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

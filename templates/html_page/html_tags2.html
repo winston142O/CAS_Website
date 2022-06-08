@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-informal"></span><h1><span class="section-number">3. Etiquetas Multimedia</span><a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1><p class="lead">Tutoriales proporcionados por la <a href="https://lenguajehtml.com/html/" target="blank">documentación oficial de HTML</a></p>
+                        <span id="tut-informal"></span><h1><span class="section-number">3.1. </span>Etiquetas HTML de imágenes<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Antes de colocar una imagen en una página web debemos tener claro en que clasificación se encuentra. Las imágenes utilizadas en una página web pueden ser de dos tipos: de <strong>contenido</strong> o de <strong>decoración</strong>. En el primer caso, si la imagen pertenece al contenido y tema tratado en esa página, debería incluirse mediante una etiqueta HTML <code>&lt;img&gt;</code>, pero si por el contrario pertenece a la decoración de la página, deberíamos incluirla como un <a href="http://lenguajecss.com/css/propiedades/fondos-css">fondo</a> mediante la propiedad CSS <code>background-image</code>.</p>
+                        <h3 id="etiquetas-para-imágenes" tabindex="-1">Etiquetas para imágenes</h3>
+                        <p>Para incluir imágenes en el contenido de una página utilizaremos la etiqueta <code>&lt;img&gt;</code>, que es una etiqueta muy sencilla, que dispone de varios atributos para modificar como se verá la imagen (<em>los atributos src y alt son siempre obligatorios</em>):</p>                        
+                    </div>
+                    <center><img src="https://i.imgur.com/CvO4tpY.png"></center>
+                    <div class="col-lg-6">
+                        <p>Un ejemplo básico para colocar una imagen sería el siguiente:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://lenguajehtml.com/img/logo.png<span class="token punctuation">"</span></span>
+                             <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Logotipo de HTML5<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>453<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        </code></pre>
+                        <p>Nota que con los atributos <strong>width</strong> y <strong>height</strong> se fuerza a reservar el espacio indicado en la página (<em>incluso antes de descargar y mostrar la imagen</em>). Ten en cuenta que la imagen tendrá unas dimensiones concretas y se descargará siempre a máxima resolución. Con estos atributos redimensionas la imagen al tamaño de ancho y alto indicado, pero la imagen realmente tiene su propio tamaño.</p>
+                        <p>Puedes omitir estos atributos siempre que quieras, ya que no son obligatorios, pero se consideran una buena práctica para evitar los molestos cambios repentinos de posición o tamaño en una página.</p>
+                        <h3 id="formatos-de-imágenes" tabindex="-1">Formatos de imágenes</h3>
+                        <p>En el ámbito informático existen múltiples formatos de imágenes (<em>¡muchísimos!</em>) pero no todos son aptos para utilizar en web. Vamos a dar un repaso a los formatos más utilizados y cuales son más apropiados:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/wlyxoLG.png"></center>
+                    <center><img src="https://i.imgur.com/4qvvfOp.png"></center>
+                    <div class="col-lg-6">
+                        <p>Cualquier otro formato no mostrado en esta lista no está recomendado para utilizar en web. Formatos como <code>BMP</code>, <code>TIFF</code>, <code>RAW</code>, <code>NEF</code>, <code>PSD</code>, <code>CDR</code> son formatos no orientados para su uso en la web, además de ser propietarios y muy pesados.</p>
+                        <p>Muchos de los formatos no recomendados de la tabla superior pueden utilizarse hoy si se utiliza un enfoque <strong>progresivo con fallbacks</strong>, utilizando la etiqueta HTML <code>&lt;picture&gt;</code>.</p>                        
+                        <p>Si quieres saber más sobre formatos de imágenes y como conseguir reducir su tamaño sin disminuir su calidad, te sugiero leer <a href="http://www.emezeta.com/articulos/formatos-de-imagen-guia-de-optimizacion">Formatos de imagen: Guía de optimización</a>.</p>
+                        <h3 id="nuevas-etiquetas-de-imágenes" tabindex="-1">Nuevas etiquetas de imágenes</h3>
+                        <p><strong>HTML 5.1</strong> incorporará un nuevo sistema para utilizar imágenes en nuestros documentos HTML de forma mucho más flexible que la antigua etiqueta <code>&lt;img&gt;</code> que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, utilizaremos las dos siguientes etiquetas:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/scRXWEv.png"></center>
+                    <div class="col-lg-6">
+                        <p>Como podemos ver, lo interesante está en la etiqueta <code>&lt;source&gt;</code>, que tiene una serie de atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/s7sbtAQ.png"></center>
+                    <div class="col-lg-6">
+                        <h4 id="imágenes-alternativas" tabindex="-1">Imágenes alternativas</h4>
+                        <p>Una de las primeras ventajas que nos ofrecen estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Así pues, podríamos hacer algo como esto:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.webp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token comment">&lt;!-- Formato WebP --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.jxr<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token comment">&lt;!-- Formato JPEG XR --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Descripción de la imagen<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token comment">&lt;!-- Fallback --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este caso, indicamos que el navegador utilice la imagen con el formato <strong>WebP</strong>. En caso de no soportarlo, lo intentará con el formato <strong>JPEG XR</strong>. Si tampoco lo soporta, mostrará la imagen en formato <strong>JPEG</strong>, que es la que está soportada por todos los navegadores, y si utilizamos algún navegador de texto como Lynx u otro que no pueda mostrar imágenes, mostrará el texto alternativo.</p>
+                        <p><caniuse-support feature="picture"></caniuse-support></p>
+                        <h4 id="imágenes-responsive" tabindex="-1">Imágenes responsive</h4>
+                        <p>Otra ventaja interesante es que con <code>&lt;picture&gt;</code> podemos crear imágenes responsive que cambien dependiendo de características de las <strong>media queries</strong> (<em>CSS</em>). Por ejemplo, utilicemos <code>min-width</code> (<em>tamaño mínimo de ancho de la pantalla</em>) en el siguiente ejemplo:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 600px)<span class="token punctuation">"</span></span>
+                                  <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-xl.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 300px) and (max-width: 600px)<span class="token punctuation">"</span></span>
+                                  <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-large.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 50px)<span class="token punctuation">"</span></span>
+                                  <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-small.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-medium.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5 logo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>De esta forma, estamos indicando que se muestren diferentes imágenes dependiendo de la resolución de pantalla (<em>ancho</em>) del dispositivo:</p>
+                        <ul>
+                        <li><strong>Dispositivos muy grandes</strong> (más de 600px): Muestra la imagen <code>html5-logo-xl.png</code></li>
+                        <li><strong>Dispositivos grandes</strong> (entre 300-600px): Muestra la imagen <code>html5-logo-large.png</code></li>
+                        <li><strong>Dispositivos pequeños</strong> (menos de 50px): Muestra la imagen <code>html5-logo-small.png</code></li>
+                        <li><strong>Si no cumple las anteriores</strong> (o no soporta HTML5.1): Muestra la imagen <code>html5-logo-medium.png</code></li>
+                        </ul>
+                        <p>Nótese que esto sólo hará cambio de imagen efectivo justo en los límites indicados (50, 300, 600). Si se desea que la imagen se adapte proporcionalmente, lo mejor es recurrir a <a href="http://lenguajecss.com/css/propiedades/responsive-design#tamaos-mximos-y-mnimos">tamaños máximos y mínimos de CSS</a>.</p>
+                        <h4 id="diferentes-densidades" tabindex="-1">Diferentes densidades</h4>
+                        <p>Además, este sistema también permite especificar diferentes imágenes dependiendo de la densidad de pantalla del dispositivo (<em>alto que varía actualmente en las diferentes gamas de smartphones</em>). Para ello, tenemos que usar un descriptor después del nombre de la imagen utilizado en el atributo <strong>srcset</strong> (<em>si no se incluye, por omisión es igual a 1x</em>):</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 600px)<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-xl.png, html5-logo-xl-hd.png 2x, html5-logo-xl-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(min-width: 300px) and (max-width: 600px)<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-large.png, html5-logo-large-hd.png 2x, html5-logo-large-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(max-width: 50px)<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-small.png, html5-logo-small-hd.png 2x, html5-logo-small-fhd.png 3x<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>html5-logo-medium.png, html5-logo-medium-hd.png 2x, html5-logo-medium-fhd.png 3x<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5 logo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Nótese que en cada etiqueta <code>&lt;source&gt;</code>, e incluso en la etiqueta <code>&lt;img&gt;</code>, se puede especificar el atributo <strong>srcset</strong> e indicar varias imágenes preparadas para pantallas de alta densidad.</p>
+                        <p>Por último, recuerda que la etiqueta <code>&lt;picture&gt;</code> y la etiqueta <code>&lt;source&gt;</code> dentro de la anterior son características de HTML5.1 y aún no están soportadas en todos los navegadores. Se recomienda ser cuidadoso con este detalle.</p>
+                        <span id="tut-informal"></span><h1><span class="section-number">3.2. </span>Etiquetas contenido externo<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Cuando tenemos una página web y queremos colocar contenido en ella, lo conveniente es utilizar formatos libres para garantizar que sean accesibles desde cualquier tipo de dispositivo.</p>
+                        <p>¿Pero que ocurre si lo que quiero colocar no son formatos de video, de audio o de imagen? Por ejemplo, servicios como Youtube, Vimeo, SoundCloud, SlideShare u otros similares. Se trata de servicios que ofrecen <strong>contenido externo para incrustar</strong> en nuestra página, pero no nos proporcionan directamente imágenes, video o audio en formatos que reconozca el navegador, sino que nos ofrecen un enlace o contenidos que requieren un plugin externo instalado en el navegador. En esas situaciones, lo más probable es que necesites una de las siguientes etiquetas.</p>
+                        <h3 id="contenido-externo" tabindex="-1">Contenido externo</h3>
+                        <p>Las siguientes etiquetas sirven para incrustar contenido externo:</p>                        
+                    </div>
+                    <center><img src="https://i.imgur.com/pr9eDTu.png"></center>
+                    <div class="col-lg-6">
+                        <p>Veamos ejemplos de cada una de ellas en los siguientes apartados.</p>
+                        <h3 id="marcos-en-línea-iframes" tabindex="-1">Marcos en línea (iframes)</h3>
+                        <p>Antiguamente, en versiones anteriores de HTML, existieron unas etiquetas llamadas marcos, mediante las cuales se permitía dividir la pantalla en varias secciones. Actualmente, ese modo de desarrollo ya no se utiliza ya que acarreaba múltiples problemas de accesibilidad, posicionamiento, etc.</p>
+                        <p>Sin embargo, de toda la familia de etiquetas de marcos, han sobrevivido los <code>&lt;iframe&gt;</code>, que siguen siendo útiles para incrustar contenido externo. Veamos un ejemplo extraído de servicios como <strong>YouTube</strong> o <strong>SoundCloud</strong>:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.youtube.com/embed/Imeq3GeRttw<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>560<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>315<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.bing.com/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marco<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Abrir buscador Bing<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marco<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>450<span class="token punctuation">"</span></span>
+                          <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/38289724&amp;visual=true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Esta etiqueta permite incrustar contenido externo anidado en nuestro propio documento. Es decir, podemos crear un recuadro que en su interior va a tener otra dirección URL de otra página web, documento o recurso que queramos cargar en él. Generalmente, es la etiqueta más utilizada para todo tipo de contenido externo.</p>
+                        <p>También podemos utilizar el atributo <code>name</code> para darle un nombre al marco y cargar direcciones URL diferentes a través de una etiqueta <code>&lt;a&gt;</code>, haciendo referencia al marco a través del atributo <code>target</code>. Por su parte, el atributo <code>srcdoc</code> nos permite indicar directamente el código fuente del iframe en su valor:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://pagina.com/apartado/<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;p>¡Hola! ¡Soy el &lt;strong>texto del iframe&lt;/strong>!&lt;/p><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Como se puede ver, se puede indicar el atributo <code>srcdoc</code> y el atributo <code>src</code> a la misma vez, dando prioridad al atributo <code>srcdoc</code> y manteniendo el atributo <code>src</code> como fallback, para navegadores que no soporten <code>srcdoc</code>.</p>
+                        <p class="ciu_embed" data-feature="iframe-srcdoc" data-periods="future_2,future_1,current,past_1,past_2"></p>
+                        <h3 id="contenido-incrustado" tabindex="-1">Contenido incrustado</h3>
+                        <p>La etiqueta <code>&lt;embed&gt;</code> se ideó antiguamente como una etiqueta no estándar para incluir contenido que requería el uso de un <strong>plugin externo</strong> para funcionar, ya que se trataba de tecnologías propietarias y los navegadores no las soportan. La etiqueta fue retirada en HTML4, pero en HTML5 fue incluída de nuevo. Se puede utilizar, por ejemplo, para incrustar contenido flash en una página web:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>embed</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>catgame.swf<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>250<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        </code></pre>
+                        <p>Tradicionalmente, también se empezó a utilizar la etiqueta <code>&lt;object&gt;</code> para incrustar contenido flash, pudiendo especificar parámetros en su interior. El siguiente fragmento de código es equivalente al anterior:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>catgame.swf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>quality<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>high<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Así pues, la etiqueta <code>&lt;object&gt;</code> se ofrecía como una alternativa más apropiada para cargar todo tipo de contenidos. Y no sólo eso, sino que ofrece la posibilidad de especificar el <strong>tipo de formato</strong> del que se trata, así como añadir <strong>múltiples parámetros</strong> o la opción de añadir en su interior etiquetas HTML o texto que funcionen a modo de <strong>fallback</strong> (<em>plan B</em>), o lo que es lo mismo, en el caso de que el navegador no pueda cargar ese formato, cargará la imagen, video, texto o la etiqueta que se incluya en su interior. Algunos ejemplos:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>clock.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application/x-shockwave-flash<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>movie<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://video.example.com/library/watch.swf<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allowfullscreen<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>param</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flashvars<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://video.example.com/vids/315981<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          Contenido multimedia no soportado.
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span>
+                        </code></pre>                        
+                        <span id="tut-informal"></span><h1><span class="section-number">3.3. </span>Etiquetas HTML de video<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>En HTML5 se introduce la interesante posibilidad de <strong>mostrar videos directamente</strong> desde nuestro navegador. De hecho, si arrastramos un video a la ventana del navegador, veremos que comienza a reproducirse en él. Para poder insertar videos en nuestras páginas HTML tenemos que utilizar la etiqueta <code>&lt;video&gt;</code>, que junto a la etiqueta <code>&lt;source&gt;</code> podremos utilizar estas capacidades multimedia de HTML5.</p>
+                        <blockquote>
+                        <blockquote>
+                        <blockquote>
+                        <p><strong>Ojo</strong>: Si lo que quieres es insertar videos desde <strong>Youtube</strong>, <strong>Vimeo</strong> u otro servicio alternativo, debes utilizar la <a href="/html/multimedia/etiquetas-html-de-contenido-externo">etiqueta HTML iframe</a> en lugar de la etiqueta <code>&lt;video&gt;</code>.</p>
+                        </blockquote>
+                        </blockquote>
+                        </blockquote>
+                        <h3 id="video-modo-básico" tabindex="-1">Video (modo básico)</h3>
+                        <p>La etiqueta <code>&lt;video&gt;</code> tiene varios atributos a nuestra disposición:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/P0r2nLm.png"></center>
+                    <center><img src="https://i.imgur.com/hzWfxFj.png"></center>
+                    <div class="col-lg-6">
+                        <p>Un primer ejemplo muy básico para colocar un video en nuestra página web:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>640<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>480<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x480, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos <strong>controls</strong> o <strong>autoplay</strong>.</p>
+                        <p>Otro ejemplos básicos para colocar videos en nuestra página:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Ejemplo 1 --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token attr-name">poster</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>presentacion.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                        <span class="token comment">&lt;!-- Ejemplo 2 --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span> <span class="token attr-name">muted</span> <span class="token attr-name">loop</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este caso cargamos un video, pero que no se mostrará porque se ha indicado que se utilice una imagen de presentación que se mostrará hasta que el usuario pulse en el botón de reproducir de los controles. En el segundo ejemplo, tenemos un video que se reproduce automáticamente al cargar la página, en silencio y en bucle, iniciándose una y otra vez.</p>
+                        <blockquote>
+                        <p>Desde 2017, Chrome, Firefox y otros navegadores establecieron un <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">cambio de políticas</a> con el atributo de reproducción automática <code>autoplay</code>, por lo que no funcionará salvo que el usuario haya interactuado antes en la página.</p>
+                        </blockquote>
+                        <h3 id="formatos-de-video" tabindex="-1">Formatos de video</h3>
+                        <p>Antes de continuar con el modo avanzado de etiquetas de video, debemos conocer una serie de conceptos básicos y los diferentes formatos de video que existen actualmente. En primer lugar, debemos saber que un archivo de video tiene dos partes principales: el <strong>formato contenedor</strong>, que es el formato del video en sí, mientras que en su interior puede tener múltiples componentes codificados con diferentes <strong>codecs</strong>.</p>
+                    </div>
+                    <Center><img src="https://lenguajehtml.com/html/multimedia/etiquetas-html-de-video/formato-contenedor-video.png" alt="Formato contenedor de video" width="1074" height="468" loading="lazy"></center>
+                    <div class="col-lg-6">
+                        <p>De hecho, un video básico suele tener, como mínimo, un componente de video y otro de audio, pero puede tener muchos más (<em>subtítulos, imágenes, etc...</em>). Estos detalles son muy importantes, ya que dependiendo del formato y/o codec de un video, puede que sea factible utilizarlo para web o no, así que hay que conocer un poco sobre estos conceptos.</p>
+                        <p>A continuación tenemos un listado de los formatos/codecs más conocidos y utilizados:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/nzylwL3.png"></center>
+                    <div class="col-lg-6">
+                        <p>Otros formatos como <code>MOV</code>, <code>FLV</code>, <code>3GP</code>, <code>MPG</code>, <code>RMVB</code> o <code>ASF</code>/<code>WMV</code> no se recomiendan para su utilización en web ya que son anticuados, propietarios o poco eficientes. Si te interesa saber más sobre estos temas, aconsejo la lectura del artículo <a href="https://www.emezeta.com/articulos/formatos-de-video-todo-lo-que-deberias-saber">Formatos de video: Todo lo que deberías saber</a>.</p>
+                        <h3 id="video-modo-avanzado" tabindex="-1">Video (modo avanzado)</h3>
+                        <p>Sin embargo, aún con toda esta información, no hemos visto ni la mitad de posibilidades multimedia que tenemos con HTML5. La etiqueta <code>&lt;video&gt;</code> también puede actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades adicionales.</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/jAQX9O9.png"></center>
+                    <div class="col-lg-6">
+                        <h4 id="videos-alternativos" tabindex="-1">Videos alternativos</h4>
+                        <p>Si utilizamos la etiqueta <code>&lt;video&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>640<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>480<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.ogv<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/ogg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>imagen.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Video no soportado<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          Su navegador no soporta contenido multimedia.
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este ejemplo, los navegadores no mostrarán todos los contenidos a la vez, sino que seguirán el siguiente procedimiento:</p>
+                        <ul>
+                        <li>Intenta mostrar el primer formato (MP4). Si el navegador no soporta este formato, salta al siguiente.</li>
+                        <li>Intenta mostrar el segundo formato (WEBM). Si el navegador no soporta este formato, salta al siguiente.</li>
+                        <li>Intenta mostrar el tercer formato (OGV). Si el navegador no soporta este formato, salta al siguiente.</li>
+                        <li>Si se trata de un navegador que no soporta HTML5, intentará mostrar la imagen.</li>
+                        <li>Si se trata de un navegador de terminal de texto (<em>o sin capacidades gráficas</em>), mostrará el texto &quot;Su navegador no soporta contenido multimedia&quot;.</li>
+                        </ul>
+                        <p>De esta forma tenemos soporte completo para todo tipo de dispositivos.</p>
+                        <h4 id="acceso-a-segundos-concretos" tabindex="-1">Acceso a segundos concretos</h4>
+                        <p>Utilizando los <a href="https://www.w3.org/TR/media-frags/">fragmentos multimedia</a> se pueden conseguir algunas acciones interesantes, como por ejemplo especificar el momento concreto del video (<em>o audio</em>) en el que se quiere empezar a reproducir o terminar de reproducir. Veamos unos ejemplos:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Ejemplo 1 --></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">controls</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4#t=15<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                            
+                            <span class="token comment">&lt;!-- Ejemplo 2 --></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">controls</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4#t=25,45<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                            </code></pre>
+                            <p>En el primer caso, reproducimos el video a partir del segundo <strong>15</strong> del mismo, mientras que en el segundo caso, reproducimos el video a partir del segundo <strong>25</strong> y terminará de reproducirse en el segundo <strong>45</strong>.</p>
+                        </pre>
+                        <span id="tut-informal"></span><h1><span class="section-number">3.4. </span>Etiquetas HTML de audio<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Al igual que vimos en el tema anterior con los videos, es posible añadir archivos de audio a nuestras páginas web para colocar música, sonidos o simplemente usar música como ambientación. En versiones anteriores de HTML se usaba una <a href="/html/semantica/etiquetas-html-obsoletas">etiqueta HTML obsoleta</a> denominada <code>&lt;bgsound&gt;</code> que realizaba algo similar.</p>
+                        <p>En este caso, utilizaremos la etiqueta <code>&lt;audio&gt;</code> que funciona exactamente igual que <code>&lt;video&gt;</code>, pero con relación a archivos de audio.</p>
+                        <h3 id="audio-modo-básico" tabindex="-1">Audio (modo básico)</h3>
+                        <p>La etiqueta <code>&lt;audio&gt;</code> tiene varios atributos a nuestra disposición:</p>                        
+                    </div>
+                    <Center><img src="https://i.imgur.com/34voBpx.png"></center>
+                    <div class="col-lg-6">
+                        <p>Un primer ejemplo muy básico para colocar un audio en nuestra página web:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.mp3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Sin embargo esto no mostrará nada visualmente, ni reproducirá ningún sonido. Realmente, el audio está ahí, pero no le hemos indicado el atributo <code>controls</code> para que muestre los controles y que el usuario pueda pulsar el botón «<strong>play</strong>». Tampoco le hemos colocado el atributo <code>autoplay</code>, en cuyo caso tampoco mostraría nada visualmente, pero si que se empezaría a escuchar el sonido o pista de música.</p>
+                        <p>Otro ejemplos básicos para colocar audios en nuestra página:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">preload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>none<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.ogg<span class="token punctuation">"</span></span> <span class="token attr-name">autoplay</span> <span class="token attr-name">loop</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En el primer ejemplo, cargamos un audio en formato MP3, pero indicamos que no precargue nada. Empezará a descargarse sólo cuando el usuario pulse en los controles de reproducción. Este escenario puede ser interesante para evitar consumo de ancho de banda de archivos que es probable que el usuario no escuche o en dispositivos móviles donde las tarifas de datos son costosas.</p>
+                        <p>Por otro lado, el segundo ejemplo, carga un archivo de audio en formato OGG y lo reproduce automáticamente y en bucle, de modo que vuelve a empezar cuando termina.</p>
+                        <blockquote>
+                        <blockquote>
+                        <blockquote>
+                        <p><strong>OJO</strong>: Los navegadores han cambiado la política de <strong>autoreproducción</strong> con <code>autoplay</code>. Para evitar el uso abusivo de audio en una página sin permiso del usuario, los navegadores exigen que el usuario haya interactuado con la página con anterioridad (<em>y posterior a la carga inicial</em>). Lo aconsejable sería utilizar botones o areas pulsables para activar el sonido mediante JS.</p>
+                        </blockquote>
+                        </blockquote>
+                        </blockquote>
+                        <h3 id="formatos-de-audio" tabindex="-1">Formatos de audio</h3>
+                        <p>Los archivos de audio estan codificados mediante un <strong>codec</strong> específico, y es importante conocer estos detalles para saber que formatos están soportados por los diferentes navegadores.</p>
+                        <p>A continuación tenemos un listado de los formatos/codecs de audio más conocidos y utilizados:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/Tc8h7Yg.png"></center>
+                    <div class="col-lg-6">
+                        <p>Otros formatos como <code>ASF</code>/<code>WMA</code>, <code>RA</code> u otros no son apropiados para web. Si te interesa saber más sobre estos temas, aconsejo la lectura del artículo <a href="http://www.emezeta.com/articulos/formatos-de-audio-todo-lo-que-deberias-saber">Formatos de audio: Todo lo que deberías saber</a>.</p>
+                        <h3 id="audio-modo-avanzado" tabindex="-1">Audio (modo avanzado)</h3>
+                        <p>La etiqueta <code>&lt;audio&gt;</code> también puede actuar como etiqueta contenedora e incluir varias etiquetas HTML para dotar de mayor compatibilidad, o capacidades adicionales.</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/mp654s3.png"></center>
+                    <div class="col-lg-6">
+                        <p>De esta forma, pasamos de un esquema donde solo usabamos una etiqueta <code>&lt;audio&gt;</code> a otro un poco más avanzado, donde <code>&lt;audio&gt;</code> contiene múltiples etiquetas que actúan sobre ese audio en cuestión. Dichas etiquetas pueden ser <code>&lt;source&gt;</code> o <code>&lt;track&gt;</code>:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span><span class="token punctuation">></span></span>
+                          <span class="token comment">&lt;!-- Aquí etiquetas para añadir funcionalidad extra --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>La etiqueta de subtítulos <code>&lt;track&gt;</code> la veremos un poco más adelante, en el capítulo de <a href="/html/multimedia/etiquetas-html-de-subtitulos/">etiquetas HTML de subtítulos</a>.</p>
+                        <h4 id="audio-alternativo-fallback" tabindex="-1">Audio alternativo (fallback)</h4>
+                        <p>Si utilizamos la etiqueta <code>&lt;audio&gt;</code> como etiqueta contenedora, podemos incluir etiquetas <code>&lt;source&gt;</code> en su interior para proporcionar formatos alternativos y tener mayor compatibilidad con otros navegadores y navegadores antiguos que no soporten HTML5:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.opus<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.ogg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>audio.mp3<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este ejemplo, el navegador intentará reproducir el archivo de audio en formato Opus, en caso de no estar soportado por el navegador, intentará reproducir el formato Ogg Vorbis, y en caso de tampoco soportarlo, reproducirá el formato MP3.</p>
+                        <span id="tut-informal"></span><h1><span class="section-number">3.5. </span>Etiquetas HTML de subtítulos<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Con la llegada de HTML5 se introduce <a href="https://w3c.github.io/webvtt/">WebVTT</a>, un formato abierto orientado a utilizarse en web para la creación de subtítulos, que proviene del extendido formato SRT.</p>
+                        <h3 id="formato-webvtt" tabindex="-1">Formato WebVTT</h3>
+                        <p>La sintaxis del formato de texto <strong>WebVTT</strong> es bastante legible:</p>
+                        <pre class="language-bash"><code class="language-bash">WEBVTT
+                        00:04.000 --<span class="token operator">></span> 00:07.000
+                        <span class="token operator">&lt;</span>v Capitán América<span class="token operator">></span>Hola <span class="token operator">&lt;</span>i<span class="token operator">></span>Tony<span class="token operator">&lt;</span>/i<span class="token operator">></span>.
+                        
+                        00:09.000 --<span class="token operator">></span> 00:11.000
+                        <span class="token operator">&lt;</span>v Ironman<span class="token operator">></span>¿Me echabas de menos?
+                        
+                        00:12.000 --<span class="token operator">></span> 00:14.000 align:end size:50%
+                        *ruido*
+                        </code></pre>
+                        <p>Como se puede ver, el archivo empieza con el texto <code>WEBVTT</code> y continua con una línea que indica el inicio y final que permanecerá visible la frase de la siguiente línea. En la frase, se puede indicar el personaje que está hablando (<em>para posteriormente aplicar estilos</em>) e incluso incluir etiquetas simples para dar formato al texto. También se pueden alinear textos, modificar su tamaño o cambiar la posición, entre otras cosas.</p>
+                        <h3 id="etiquetas-para-subtítulos" tabindex="-1">Etiquetas para subtítulos</h3>
+                        <p>Este formato se puede utilizar mediante la etiqueta <code>&lt;track&gt;</code> dentro de una etiqueta contenedora <code>&lt;video&gt;</code> y después de las etiquetas <code>&lt;source&gt;</code>. La etiqueta <code>&lt;track&gt;</code> soporta varios atributos:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/UToKLsV.png"></center>
+                    <div class="col-lg-6">
+                        <p>En el siguiente fragmento de código vemos un ejemplo de uso, en el cuál, en la barra de los controles de reproducción, se nos mostrará un icono <code>CC</code> donde el usuario puede elegir uno de los canales de subtítulos indicados, que por defecto utiliza el primero que encuentra o el que tenga el atributo <strong>default</strong>:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subs-es.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>es<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Español<span class="token punctuation">"</span></span> <span class="token attr-name">default</span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subs-en.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>English<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>track</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>subs-fr.vtt<span class="token punctuation">"</span></span> <span class="token attr-name">srclang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fr<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Français<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>De la misma forma también es posible utilizar subtítulos en etiquetas <code>&lt;audio&gt;</code> contenedoras, algo que puede ser muy útil por ejemplo para podcasts o reproducciones de audio donde se cuentan detalles y se quiere subtitular o describir de forma textual.</p>                        
+                    </div>                    
+                </div>
+            </section>
+            <!-- Image element - set the background image for the header in the line below-->
+            <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+                <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+                <div style="height: 20rem"></div>
+            </div>
+            <!-- Content section-->
+            <!-- Footer-->
+            <footer class="py-5 bg-dark">
+                <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+            </footer>
+            <!-- Bootstrap core JS-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Core theme JS-->
+            <script src='js/scripts.js'></script>
+        </body>
+    </html>

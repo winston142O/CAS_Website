@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <center><h2>Introducción al IDLE de Python</h2></center>
+                        <br>
+                        <p class="lead">En la mayoría de estas guías estaremos empleando el IDLE que viene con Python, para no complicar las cosas demasiado.</p>
+                        <p class="mb-0">Primeramente, tenemos que comprender la teoría de <strong><i>qué es un IDLE</strong></i>: Un IDLE es un entorno de desarrollo integrado para Python, que se incluye con la implementación predeterminada del lenguaje desde la versión 1.5.2b. Ahora que sabemos lo que es, vamos a observar lo que viene siendo el IDLE de Python:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/63G889b.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Lo que podemos ver ahora mismo es la consola del IDLE Python, el inicio del input (donde vamos a escribir) está marcada por el <code>>>></code>, esto significa que cualquier comando que introduzcamos será ejecutado inmediatamente como cualquier consola de comandos.</p>
+                        <br>
+                        <p class="mb-0">Esto puede resultar muy práctico especialmente cuando estamos trabajando con ciertas funciones para las cuales necesitamos este tipo de entorno, pero no es práctico para lo que viene siendo escribir programas largos. Para escribir código de forma más limpia lo que podemos hacer es crear un nuevo archivo:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/dO14BFj.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Una vez pulsemos el boton para crear un nuevo archivo, obtendremos la siguiente pantalla:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/sWZDku7.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Mientras tengamos esta pestaña abierta podemos escribir nuestro código sin interrupciones, y ejecutarlo una vez esté completado. Entonces para fines de este ejemplo, vamos a escribir un código simple para probar:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/QgrB9Ze.jpg" width="1170" height="376" alt="..." />
+                        <br>
+                        <br>
+                        <p class="mb-0">Una vez escrito nuestro código, si observamos en la parte superior de la pestaña, tenemos el menú de opciones y herramientas, y entre estas se encuentra la opción <code>RUN</code>, y dentro de esta se encuentra la opción <code>RUN MODULE</code> <strong>(la cual podría ser accesada rápidamente pulsando la tecla F5)</strong></p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/rYdedSH.jpg" width="1170" height="376" alt="..." /> 
+                        <br>
+                        <br>
+                        <p class="mb-0">Una vez ejécutemos el código, nos dará el resultado o <strong><i>INPUT</i></strong>:</p>
+                        <br>
+                        <img class="img-fluid" src="https://i.imgur.com/lcKkSCu.jpg" width="1170" height="376" alt="..." /> 
+                        <br>
+                        <br>
+                        <p class="mb-0">Esta es una buena forma de familiarizarnos con el intérprete, debido a que con este simple tutorial ya sabemos como manejarlo.</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

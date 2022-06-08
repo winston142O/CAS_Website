@@ -1,0 +1,1909 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-informal"></span><h1><span class="section-number">2. </span>Parámetros CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <span id="tut-informal"></span><h1><span class="section-number">2.1. </span>Propiedades CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>La lista de las propiedades CSS ordenadas alfabéticamente:</p>
+
+                        <div id="chuletacss3" class="large-12">
+                        <table class="cheatsheet selectors">
+                        <thead>
+                        <tr><th width="26%">Propiedad</th><th width="37%">Sintaxis</th><th width="37%">Descripción</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-align-content.php">align-content</a></td>
+                        <td><strong>felexbox</strong> align-content: flex-start | flex-end | center | space-between | space-around | stretch;<br>
+                        <strong>grid</strong>  align-content:  start | end | center | space-between | space-around  | stretch | space-evenly </td>
+                        <td>Alinea los elementos del contenedor a lo largo del eje transversal en flexbox y a lo relativo a la columna en grid. El valor por defecto es stretch.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-align-items.php">align-items</td>
+                        <td><strong>felexbox</strong> align-items: flex-start | flex-end | center | baseline | stretch;<br>
+                        <strong>grid</strong> align-items: start | end | center | baseline | stretch; </td>
+                        <td>Establece el valor align-self para todos los elementos descendientes directos de un elemento. Utilizada en flexbox y grid. El valor por defecto es stretch.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-align-self.php">align-self</td>
+                        <td><strong>felexbox</strong> align-self: flex-start | flex-end | center | baseline | stretch;<br>
+                        <strong>grid</strong> align-self:  start | end | center | stretch</td>
+                        <td>En felxbox la propiedad align-self reposiciona elementos individuales relativamente al eje transversal de la caja<br>
+                        En grid la propiedad align-self alinea el ítem relativo a la columna.</td>
+                        </tr>
+                        <tr>
+                        <td>all</td>
+                        <td>all: initial | inherit | unset</td>
+                        <td>Reestablece el valor de todas las propiedades del elemento seleccionado excepto direction y unicode-bidi.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/animacionescss.php">animation</a></td>
+                        <td>animation: nombre duración <a class="link_to" target="_blank" href="/css3/animacionescss1.php#a_easing"><span>función-de-temporizador</span></a> <a class="link_to" target="_blank" href="/css3/animacionescss1.php#a_delay"><span>demora</span></a> <a class="link_to" target="_blank" href="/css3/animacionescss1.php#a_iter"><span>número-de-iteraciones</span></a> <a class="link_to" target="_blank" href="/css3/animacionescss1.php#a_dir"><span>dirección</span></a> <a class="link_to" target="_blank" href="/css3/animacionescss1.php#a_play"><span>estado-de-la-animación</span></a></td>
+                        <td>Utilizada para animar las propiedades CSS que pueden ser animadas.</td>
+                        </tr>
+                        <tr>
+                        <td>appearance</td>
+                        <td>-moz-appearance: none;<br>
+                        -webkit-appearance: none;</td>
+                        <td>Utilizada para mostrar los estilos nativos del sistema operativo para un elemento como checkbox, button, textarea, radio, etc...</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/filtros.php#backdrop_filter">backdrop-filter</a></td></td>
+                        <td>backdrop-filter:  blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia();</td>
+                        <td>Tiene el mismo efecto que la propiedad filter, solo que los estilos se aplican al fondo (background) en lugar de aplicarse al elemento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/reversible.php#backface_visibility">backface-visibility</a></td>
+                        <td>backface-visibility: hidden | visible;</td>
+                        <td>Decide si un elemento, girado 180º alrededor del eje X o Y, debe seguir visible ( el valor por defecto ) o no ( hidden ).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background.php">background</a></td>
+                        <td>background: color position / size repeat origin clip attachment image;</td>
+                        <td>Establece todas las propiedades del fondo en una sola declaración abreviada</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-attachment.php">background-attachment</a></td>
+                        <td>background-attachment: scroll | fixed | local;</td>
+                        <td>Se utiliza para controlar como se comportan las imágenes de fondo al desplazar la página.</td>
+                        </tr>
+                        <td><a class="link_to" target="_blank" href="/css3/blending-modes.php#backgroundBlendMode">background-blend-mode</a></td>
+                        <td>background-blend-mode:  color | color-burn | color-dodge | darken | difference | exclusion | hard-light | hue | lighten | luminosity | multiply | normal | overlay | saturation | screen | soft-light</td>
+                        <td>Utilizada para combinar dos imágenes de fondo, o una imagen y un color.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-clip.php">background-clip</a></td>
+                        <td>background-clip: border-box | padding-box | content-box | text | inherit;</td>
+                        <td>Especifica hasta donde se extiende el fondo ( background ) de un elemento, ya sea color o imagen.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-color.php">background-color</a></td>
+                        <td>background-color: rgb(0,0,0);</td>
+                        <td>Se utiliza para dar un color de fondo a un elemento HTML</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-image.php">background-image</a></td>
+                        <td> background-image: url(carpeta/donde/esta/la/imagen.png);</td>
+                        <td>Utiliza una imagen o un gradiente como imagen de fondo de un elemento HTML.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-origin.php">background-origin</a></td>
+                        <td>background-origin: border-box | padding-box | content-box | inherit;</td>
+                        <td>Utilizada para determinar como se calcula la posición ( background-position ) de la imagen de fondo ( background-image ).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-position.php">background-position</a></td>
+                        <td>
+                        background-position: 50px 0;<br>
+                        background-position: 50% 10%;<br>
+                        background-position: top | bottom  | left | right | center;
+                        </td>
+                        <td>Permite posicionar una imagen de fondo dentro de su contenedor.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-repeat.php">background-repeat</a></td>
+                        <td>background-repeat: no-repeat | repeat |  repeat-x |  repeat-y | space | round</td>
+                        <td>Utilizada para establecer si la imagen se repite o no y de que forma:</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/background-size.php">background-size</a></td>
+                        <td>background-size: auto | contain | cover | tamañoX[ tamañoY]</td>
+                        <td>Permite redimensionar las imágenes de fondo.</td>
+                        </tr>
+                        <tr>
+                        <td>bleed</td>
+                        <td>bleed: auto |  longitud</td>
+                        <td>Propiedad utilizada con la regla at @page para determinar el sangrado de pagina</td>
+                        </tr>
+                        <!--<tr>
+                        <td>block-overflow</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/border.php">border</a></td>
+                        <td>border: [border-width] border-style [border-color];<br>
+                        border:1px solid black;</td>
+                        <td>Establece en una declaración abreviada las propiedades <code>border-width</code>, <code>border-style</code>, y <code>border-color</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/border_table.php#border_collapse">border-collapse</a></td>
+                        <td>border-collapse: collapse | separate</td>
+                        <td>Establece si las celdas adiacentes de una tabla <code>&lt;table&gt;</code> comparten el mismo borde ( <code>collapsed</code> ) o no ( <code>separate</code> ).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/border-image.php">border-image</a></td>
+                        <td>border-image: border-image-source || border-image-slice [ / border-image-width | / border-image-width / border-image-outset ] || border-image-repeat</td>
+                        <td>Utiliza una imagen o un gradiente para trazar el borde de un elemento HTML y es la declaración abreviada de <code>border-image-source</code>, <code>border-image-slice</code>, <code>border-image-width</code>, <code>border-image-outset</code>, y <code>border-image-repeat</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/border-radius.php">border-radius</a></td>
+                        <td>border-radius: 10px;</td>
+                        <td>Utilizada para crear esquinas redondeadas. Es la declaración abreviada de <code>border-top-left-radius</code>, <code>border-top-right-radius</code>, <code>border-bottom-right-radius</code>, y <code>border-bottom-left-radius</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/border_table.php#border_spacing">border-spacing</td>
+                        <td>border-spacing: 1em;</td>
+                        <td>Controla la separación de los bordes en una tabla <code>table</code> con bordes separados <code>border-collapse: separate</code> </td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php#top_right_bottom_left">bottom</a></td>
+                        <td>bottom:1px;</td>
+                        <td>Establece la distancia entre el borde inferior de un elemento posicionado ( <code>position:relative | absolute</code> ... ) relativo al borde inferior de la caja padre</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/box-decoration-break.php">box-decoration-break</a></td>
+                        <td>box-decoration-break: slice | clone</td>
+                        <td>Decide como utilizar los elementos decorativos de un elemento ( <code>background</code>, <code>border</code>, <code>border-radius</code>, <code>border-image</code>, <code>box-shadow</code>, <code>margin</code>, y <code>padding</code> ) cuando el elemento ocupa múltiples líneas columnas o páginas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/box-shadow.php">box-shadow</a></td>
+                        <td>box-shadow: desplazamiento horizontal desplazamiento vertical desenfoque extension color inset;</td>
+                        <td>Aplica una sombra alrededor de un elemento HTML</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/box-sizing.php">box-sizing</a></td>
+                        <td>box-sizing : content-box | border-box | inherit;</td>
+                        <td>Decide como se calcula el ancho y el alto de una caja; si el <code>padding</code> y el <code>border</code> de la caja suman ( <code>content-box</code> ) o no ( <code>border-box</code> ).</td>
+                        </tr>
+                        
+                        
+                        
+                        
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">break-inside</a></td>
+                        <td>break-inside: auto | avoid | avoid-page | avoid-column | avoid-region</td>
+                        <td>En el layout de columnas la propiedad break-inside se utiliza para controlar si romper o no un elemento html entre columnas.</td>
+                        </tr>
+                        <tr>
+                        <td>caption-side</td>
+                        <td>caption-side: top | bottom | block-start | block-end | inline-start | inline-end</td>
+                        <td>Decide donde poner la descripción ( <code>caption</code>) de una tabla ( <code>&lt;table&gt;</code>).</td>
+                        </tr>
+                        <tr>
+                        <td>caret-color</td>
+                        <td>caret-color: red;</td>
+                        <td>especifica el color del cursor de texto de un elemento editable.</td>
+                        </tr>
+                        <tr>
+                        <td>clear</td>
+                        <td>clear: none | left | right | both | inline-start | inline-end</td>
+                        <td>Decide si un elemento tiene que aparecer al lado o debajo de un <mark>elemento flotado</mark> que lo precede.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/clip-path.php">clip-path</a></td>
+                        <td>clip-path: circle(50px at 0 100px);</td>
+                        <td>Crea una región de recorte para que solo una parte del elemento HTML sea visible</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/color.php">color</a></td>
+                        <td>color:red;</td>
+                        <td>Establece el color del texto de las decoraciones ( <code>text-decoration</code> ) y el valor de <code>currentcolor</code></td>
+                        </tr>
+                        <tr>
+                        <td>color-adjust</td>
+                        <td>color-adjust: economy | exact</td>
+                        <td>Establece como se debe optimizar el aspecto de un elemento en los dispositivos de salida ( una impresora - por ejemplo ).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">column-count</a></td>
+                        <td>column-count: número | auto</td>
+                        <td>En el layout de columnas la propiedad column-count especifica el número de columnas.</td>
+                        </tr>
+                        <tr>
+                        <td>column-fill</td>
+                        <td>column-fill: auto | balance | balance-all</td>
+                        <td>Especifica como aparece el contenido de un elemento en el layout de columnas</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">column-gap</a></td>
+                        <td>column-gap: tamaño | normal</td>
+                        <td>Especifica el tamaño ( px, em, etc…) del espacio entre columnas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">column-rule</a></td>
+                        <td>column-rule: column-rule-width column-rule-style column-rule-color</td>
+                        <td>Declaración abreviada para establecer las propiedades del separador entre columnas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">column-span</a></td>
+                        <td>column-span: 1 | all;</td>
+                        <td>Establece si un elemento puede extenderse a lo largo de varias columnas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">column-width</a></td>
+                        <td>column-width: anchura | auto;</td>
+                        <td>Sugiere la anchura optima de las columnas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/columnas-css3.php">columns</a></td>
+                        <td>columns: column-width column-count</td>
+                        <td>Declaración abreviada  para establecer las propiedades column-width y column-count</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php">content</a></td>
+                        <td>content: url(imagen.jpg);</td>
+                        <td>Se utiliza junto con los pseudo-elementos <code>::before</code> y <code>::after</code> para generar el contenido que sde estos.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php">counter-increment</a></td>
+                        <td>counter-increment: mi-contador 5;</td>
+                        <td>Se utiliza junto con los pseudo-elementos <code>::before</code> y <code>::after</code> para especificar el incremento del contador utilizado como valor de la propiedad <code>content</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php">counter-reset</a></td>
+                        <td>counter-reset: contador número | none</td>
+                        <td>Se utiliza junto con los pseudo-elementos <code>::before</code> y <code>::after</code> para reestablecer el valor inicial de un contador utilizado como valor de la propiedad <code>content</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/cursor.php">cursor</a></td>
+                        <td>cursor: auto | default | none | context-menu | help | pointer | progress | wait | cell | crosshair | text | vertical-text | alias | copy | move | no-drop | not-allowed | e-resize | n-resize | ne-resize | nw-resize | s-resize | se-resize | sw-resize | w-resize | ew-resize | ns-resize | nesw-resize | nwse-resize | col-resize | row-resize | all-scroll | zoom-in | zoom-out | grab | grabbing</td>
+                        <td>Especifica el tipo de cursor que se mostrara cuando el raton pasa por encima de un elemento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#direction">direction</a></td>
+                        <td>direction: ltr | rtl | inherit;</td>
+                        <td>Se utiliza para indicar en que dirección fluye el texto ( <code>rtl</code>: de derecha a izquierda o <code>ltr</code>: de izquierda a derecha )</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/display.php">display</a></td>
+                        <td>display: inline | block | list-item | inline-block | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit</td>
+                        <td>Permite definir como será mostrado un cierto elemento HTML</td>
+                        </tr>
+                        <tr>
+                        <td>empty-cells</td>
+                        <td>empty-cells: show | hide</td>
+                        <td>Establece si los bordes y los fondos de las celdas vacías de una tabla <code>table</code> serán visibles o no.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>fill</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/filtros.php">filter</a></td>
+                        <td>filter: blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia();</td>
+                        <td>Es una manera de aplicar filtros SVG a un elemento html (sobretodo imagenes)</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-abreviado.php">flex</a></td>
+                        <td>.item { flex: flex-grow [flex-shrink] [flex-basis]; }</td>
+                        <td>Es una propiedad de los ítems de un contenedor flex. y representa la declaración abreviada de <code>flex-grow</code>, <code>flex-shrink</code> ( opcional ) y <code>flex-basis</code> ( opcional ) </td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-abreviado.php#flexBasis">flex-basis</a></td>
+                        <td>flex-basis:50%;</td>
+                        <td>Es una propiedad de los ítems de un contenedor flex. Especifica el valor inicial del tamaño principal de un elemento flex, antes de que esté redimensionado</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-direction.php">flex-direction</a></td>
+                        <td> flex-direction: row | row-reverse | column | column-reverse;</td>
+                        <td>Es una propiedad del contenedor flex, y establece la dirección de los elementos hijos ( ítems flex ).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-wrap.php#flexFlow">flex-flow</a></td>
+                        <td> flex-flow: flex-direction [flex-wrap]; </td>
+                        <td>Es una propiedad del contenedor flex. Representa la declaración abreviada de las dos propiedades: <code>flex-direction</code> y <code>flex-wrap</code> ( opcional ) </td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-abreviado.php#flexGrow">flex-grow</a></td>
+                        <td>flex-grow:2;</td>
+                        <td>Una propiedad de los ítems del contenedor flex. Establece cuanto puede crecer un elemento flex en relación al resto de elementos de la misma caja flex.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-abreviado.php#flexShrink">flex-shrink</a></td>
+                        <td>flex-shrink:2;</td>
+                        <td>Una propiedad de los ítems del contenedor flex. Establece cuanto puede disminuir un elemento flex en relación al resto de elementos de la misma caja flex</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-wrap.php">flex-wrap</a></td>
+                        <td>flex-wrap: nowrap | wrap | wrap-reverse;</td>
+                        <td>Es una propiedad del contenedor flex y especifica si puede haber un cambio de línea ( wrap ) o no ( nowrap ).</td>
+                        </tr>
+                        <tr>
+                        <td>float</td>
+                        <td>float: left | right | none | inline-start | inline-end</td>
+                        <td>Especifica si un elemento debe florar o no y de que manera.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php">font</a></td>
+                        <td>font: italic small-caps bold 44px Georgia, sans-serif;</td>
+                        <td>Representa la declaración abreviada de <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-stretch</code>, <code>font-size</code>, <code>line-height</code>, <code>font-family</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font-face.php#font_display">font-display</a></td>
+                        <td>
+                        @font-face{<br>
+                        font-family: "Fuente Ejemplo";<br>
+                        src: url('fuente.woff') format('woff');<br>
+                        <u>font-display: auto | block | swap | fallback | optional;</u>
+                        }</td>
+                        <td>Decide que fuente hay que mostrar si hay que mostrar antes que la fuente definida con @font-face sea disponible</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font_family.php">font-family</a></td>
+                        <td>font-family: Courier, "Lucida Console", monospace;</td>
+                        <td>Define una lista de fuentes o familias de fuentes, con un orden de prioridad, para utilizar en un elemento seleccionado.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>font-feature-settings</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_size">font-size</a></td>
+                        <td>font-size: tamaño | xx-small | x-small | small | medium | large | x-large | xx-large | larger | smaller</td>
+                        <td>Establece el tamaño de fuente. </td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_size_adjust">font-size-adjust</a></td>
+                        <td>font-size-adjust: tamaño | none | inherit</td>
+                        <td>Ajusta la proporción de la fuente, donde la proporción se calcula como <code>x-height / font-size</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_stretch">font-stretch</a></td>
+                        <td>font-stretch: porcentaje | normal | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded;</td>
+                        <td>Escoge un tipo de fuente normal, condensado o ampliado</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_style">font-style</a></td>
+                        <td>font-style: normal | italic | oblique | oblique 40deg;</td>
+                        <td>Establece si el texto tiene que utilizar un tipo de fuente normal, cursiva u oblicua.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_variant">font-variant</a></td>
+                        <td>font-variant: normal | small-caps | inherit;</td>
+                        <td>Decide si utilizar o no una variación de la fuente donde las minúsculas se parecen a las mayusculas ( <code>small-caps</code> ).</td>
+                        </tr>
+                        <tr>
+                        <td>font-variant-numeric</td>
+                        <td>font-variant-numeric: normal | ordinal | slashed-zero | lining-nums | oldstyle-nums | proportional-nums | tabular-nums | diagonal-fractions | stacked-fractions</td>
+                        <td>Controla el uso de caracteres alternativos para números, fracciones, cero con barra, indicadores ordinales (º ª) etc... La fuente utilizada tiene que disponer de estos caracteres alternativos.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#font_weight">font-weight</a></td>
+                        <td>font-weight: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit;</td>
+                        <td>Especifica el grosor o el peso de la fuente.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/grid-items.php#gColumn">grid-row /<br>grid-column</a></td>
+                        <td>grid-column: 2 / 3;<br>
+                        grid-row: 2 / 3;</td>
+                        <td><code>grid-row</code> representa la declaración abreviada para <code>grid-row-start</code> y <code>grid-row-end</code>; <code>grid-column</code> representa la declaración abreviada para <code>grid-column-start</code> y <code>grid-column-end</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/grid-declaraciones-abreviadas.php">grid-template-columns /<br>grid-template-rows</a></td>
+                        <td>grid-template-rows:  1fr 2fr;<br>
+                        grid-template-columns:  1fr 1fr  1fr;</td>
+                        <td>Define una plantilla de columnas ( grid-template-columns ) o de filas ( grid-template-rows ) en el Grid layout</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#hanging_punctuation">hanging-punctuation</a></td>
+                        <td>hanging-punctuation: none | [ first || [ force-end | allow-end ] || last ]</td>
+                        <td>Mueve (o no) algunos signos de puntuación (punto, coma, comillas, viñetas ...etc) fuera de la caja, para dar al texto un aspecto visualmente agradable</td>
+                        </tr>
+                        <tr>
+                        <td>height</td>
+                        <td>height: auto | altura | inherit</td>
+                        <td>Especifica la altura de un elemento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#hyphens">hyphens</a></td>
+                        <td>hyphens: none | manual | auto</td>
+                        <td>Decide como separar las palabras con guiones a finales de línea.</td>
+                        </tr>
+                        <tr>
+                        <td>image-rendering</td>
+                        <td>image-rendering: auto | crisp-edges | pixelated</td>
+                        <td>Establece el algoritmo que debe utilizarse para redinemsionar las imagenes.</td>
+                        </tr>
+                        <tr class="com">
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#initial-letter">initial-letter</a></td>
+                        <td>initial-letter: 2;</td>
+                        <td>Selecciona la primera letra de un elemento y establece el número de líneas que debe ocupar (en este momento solo en Safari).</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/blending-modes.php#isolation">isolation</a></td>
+                        <td>isolation: auto | isolate</td>
+                        <td>Utilizada junto con <code>mix-blend-modes</code>. Aisla un grupo de elementos para que no fusione con el trasfondo.<!--Decide si el elemento debe crear un nuevo stacking context.--></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-justify-content.php">justify-content</a></td>
+                        <td>justify-content: flex-start | flex-end | center | space-between | space-around;</td>
+                        <td>Controla el alineamiento de los elementos de una caja flexible ( flexbox ) a lo largo de su eje principal.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php#top_right_bottom_left">left</a></td>
+                        <td>left: longitud | porcentaje | auto</td>
+                        <td>Establece la distancia entre el borde izquierdo de un elemento posicionado ( <code>position:relative | absolute</code> ... ) relativo al borde izquierdo de la caja padre</td>
+                        </tr>
+                        <tr>
+                        <td>letter-spacing</td>
+                        <td>letter-spacing: normal | distancia;</td>
+                        <td>Establece el espaciado entre caracteres de texto.</td>
+                        </tr>
+                        <tr>
+                        <td>line-clamp</td>
+                        <td>line-clamp: 3;</td>
+                        <td>Corta el texto después de un número especifico de líneas.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/font.php#line_height">line-height</a></td>
+                        <td>line-height: normal | número | longitud | porcentaje</td>
+                        <td>Utilizada para establecer la altura de línea del texto.</td>
+                        </tr>
+                        <tr>
+                        <td>list-style</td>
+                        <td>list-style: tipo posición imagen | inherit</td>
+                        <td>Establece las propiedades de la lista ( <code>list-style-type</code>, <code>list-style-image</code>, y <code>list-style-position</code> ) en una sola declaración abreviada</td>
+                        </tr>
+                        <tr>
+                        <td>margin</td>
+                        <td>margin: 2px 1em 0 auto;</td>
+                        <td>Declaración abreviada para <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> y <code>margin-left</code></td>
+                        </tr>
+                        <tr>
+                        <td>max-height</td>
+                        <td>max-height:valor;</td>
+                        <td>Establece la altura máxima de un elemento</td>
+                        </tr>
+                        <tr>
+                        <td>max-width</td>
+                        <td>max-width: valor;</td>
+                        <td>Establece la anchura máxima de un elemento</td>
+                        </tr>
+                        <tr>
+                        <td>min-height</td>
+                        <td>min-height: valor;</td>
+                        <td>Establece la altura mínima de un elemento</td>
+                        </tr>
+                        <tr>
+                        <td>min-width</td>
+                        <td>min-width: valor</td>
+                        <td>Establece la anchuraa mínima de un elemento</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/blending-modes.php#mixBlendModes">mix-blend-mode</a></td>
+                        <td>mix-blend-mode: color | color-burn | color-dodge | darken | difference | exclusion | hard-light | hue | lighten | luminosity | multiply | normal | overlay | saturation | screen | soft-light</td>
+                        <td>Establece cómo el contenido de un elemento debe mezclarse con el contenido del elemento que está detras él y con el fondo del elemento.</td>
+                        </tr>
+                        <tr>
+                        <td>object-fit</td>
+                        <td>object-fit: fill | contain | cover | none | scale-down</td>
+                        <td>Especifica como el contenido de un elemento reemplazado ( <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> ) tiene que encajar en su propia caja definida con <code>width</code> y <code>height</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>object-position</td>
+                        <td>object-position: top left;</td>
+                        <td>Estabblece como se alinea un elemento reemplazado ( <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> ) dentro de su propia caja definida con <code>width</code> y <code>height</code>.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>offset-anchor</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>offset-distance</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>offset-path</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>offset-rotate</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transparencias.php">opacity</a></td>
+                        <td>opacity: valor | inherit;</td>
+                        <td>Establece la opacidad de un elemento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/flex-order.php">order</a></td>
+                        <td>order: número | initial | inherit;</td>
+                        <td>Es una propiedad de los ítems del contenedor flex utilizada para cambiar el orden de los elementos de una caja flex</td>
+                        </tr>
+                        <tr>
+                        <td>orphans</td>
+                        <td>orphans: 3;</td>
+                        <td>Utilizada para elementos <code>display:block</code> ( parrafos ) situados a final de página o de columna para sugerir el número minimo de líneas antes del salto de página o de columna.</td>
+                        </tr>
+                        <tr>
+                        <td>outline</td>
+                        <td>outline: 1px solid #000;</td>
+                        <td>La propiedad outline (contorno) dibuja una línea fuera de los bordes para destacar el elemento. Es la declaración abreviada de <code>outline-width</code>, <code>outline-style</code>, y <code>outline-color</code></td>
+                        </tr>
+                        <tr>
+                        <td>outline-offset</td>
+                        <td>outline-offset: distancia | inherit:</td>
+                        <td>Desplaza ( <em class="gem">offsets</em> ) el contorno ( <code>outline</code> ) y lo dibuja más allá del borde</td>
+                        </tr>
+                        <tr>
+                        <td>overflow</td>
+                        <td>overflow: visible | hidden | scroll | auto | inherit</td>
+                        <td>Decide qué pasa si el contenido se sale de la caja. Representa la declaración abreviada de <code>overflow-x</code> y <code>overflow-y</code></td>
+                        </tr>
+                        <tr>
+                        <td>overflow-x</td>
+                        <td>overflow: visible | hidden | scroll | auto | inherit</td>
+                        <td>Decide si hay que recortar el contenido en x ( en horizontal o sea: derecha/izquierda) quee sale de la caja</td>
+                        </tr>
+                        <tr>
+                        <td>overflow-y</td>
+                        <td>overflow: visible | hidden | scroll | auto | inherit</td>
+                        <td>Decide si hay que recortar el contenido en y ( en vertical o sea: arriba/abajo) que sale de la caja.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>overflow-anchor</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td>overflow-wrap</td>
+                        <td>overflow-wrap: normal | break-word | anywhere</td>
+                        <td>Decide si hay que romper las palabras largas que salen de la caja. ( <code>anywhere</code> todavía no funciona )</td>
+                        </tr>
+                        <!--<tr>
+                        <td>overscroll-behavior</td>
+                        <td>overscroll-behavior: [ contain | none | auto ]{1,2}</td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td>padding</td>
+                        <td>padding: valor(es)</td>
+                        <td>Establece el relleno ( padding ) de una caja y representa la declaración abreviada de <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, y <code>padding-left</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>padding-bottom</td>
+                        <td>padding-bottom: valor(es)</td>
+                        <td>Establece el relleno ( padding ) de una caja y representa la declaración abreviada de <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, y <code>padding-left</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>padding-left</td>
+                        <td>padding-left: valor(es)</td>
+                        <td>Establece el relleno a la izquierda ( padding-left ) de una caja.</td>
+                        </tr>
+                        <tr>
+                        <td>padding-right</td>
+                        <td>padding-right: valor(es)</td>
+                        <td>Establece el relleno a la derecha ( padding-right ) de una caja.</td>
+                        </tr>
+                        <tr>
+                        <td>padding-top</td>
+                        <td>padding-top: valor(es)</td>
+                        <td>Establece el relleno superior (padding-top)  de una caja.</td>
+                        </tr>
+                        <tr>
+                        <td>page-break-after<br>( break-after )</td>
+                        <td>page-break-after: auto | always | avoid | left | right </td>
+                        <td>Establece si el salto de página, en el documento impreso, tiene que ser después ( <em class="gem">after</em> ) del elemento.</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <td>page-break-before<br>( break-before )</td>
+                        <td>page-break-before: auto | always | avoid | left | right </td>
+                        <td>Establece si el salto de página, en el documento impreso, tiene que ser antes ( <em class="gem">before</em> ) del elemento.</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                        <td>page-break-inside<br>( break-inside )</td>
+                        <td>page-break-inside: auto | avoid</td>
+                        <td>Establece si el salto de página, en el documento impreso, puede ocurrir dentro ( <em class="gem">inside</em> ) del elemento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/reversible.php#perspectiva">perspective</a></td>
+                        <td>perspective:400px;</td>
+                        <td>Establece la distancia entre el observador virtual, y un elemento posicionado en 3D, para darle perspectiva.</td>
+                        </tr>
+                        <tr>
+                        <td>perspective-origin</td>
+                        <td>perspective-origin: distancia | porcentaje | left | center | right | top |  bottom</td>
+                        <td>Establece la posición del observador. Utilizada como punto de fuga ( <em class="gem">vanishing point</em> ) para la perspectiva</td>
+                        </tr>
+                        <tr>
+                        <td>place-items</td>
+                        <td>place-items: align-items  ustify-items?</td>
+                        <td>Representa la declaración abreviada para las propiedades  <code>align-items</code> y <code>justify-items</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/svg/pointer-events-en-svg.php">pointer-events</a></td>
+                        <td>pointer-events: auto | none | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | inherit</td>
+                        <td>En SVG y CSS establece como interactúa ( si interactúa ) un cierto elemento con el ratón.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php">position</a></td>
+                        <td>position: static | relative | absolute | sticky | fixed</td>
+                        <td>Decide cómo posicionar el elemento seleccionado en el documento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#quotes">quotes</a></td>
+                        <td>q { quotes: "«" "»";  }<br>
+                        q:before { content: open-quote }<br>
+                        q:after  { content: close-quote }<br>
+                        /* Establece dos niveles de comillas */<br>
+                        q { quotes: "«" "»" "‹" "›";   }</td>
+                        <td>Establece el aspecto de las comillas en el documento.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/la-propiedad-resize.php">resize</a></td>
+                        <td>resize: none | both | horizontal | vertical | block | inline</td>
+                        <td>Decide si un elemento es redimensionable o no y si lo és en que dirección.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php#top_right_bottom_left">right</a></td>
+                        <td>right:1em;</td>
+                        <td>Establece la distancia entre el borde derecho de un elemento posicionado ( <code>position:relative | absolute</code> ... ) relativo al borde derecho de la caja padre</td>
+                        </tr>
+                        <tr>
+                        <td>scroll-behavior</td>
+                        <td>scroll-behavior: auto | smooth</td>
+                        <td>Al hacer click en un enlace dentro del mismo documento ( <code>&lt;a href="#top"... </code> ), permite establecer si la página tiene que saltar a la nueva posición o si debe desplazarse ( scrooll ) fluidamente</td>
+                        </tr>
+                        <!--<tr>
+                        <td>scroll-margin</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scroll-padding</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scroll-snap-align</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scroll-snap-stop</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scroll-snap-type</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scrollbar</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scrollbar-color</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scrollbar-gutter</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>scrollbar-width</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-outside</a></td>
+                        <td>shape-outside: circle() | ellipse() | polygon() | inset() | url() | margin-box | border-box | padding-box | content-box | initial | inherit
+                        </td>
+                        <td>Define como se ajusta el texto alrededor del elemento flotado.</td>
+                        </tr>
+                        <td><a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-margin</a></td>
+                        <td>shape-margin: longitud | porcentajes</td>
+                        <td>Establece un margen alrededor de un trazado definido con ls propiedad <code>shape-outside</code>.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>speak</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke-dasharray</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke-dashoffset</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke-linecap</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke-linejoin</td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>stroke-width</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td>tab-size</td>
+                        <td>tab-size: número entero | longitud | inherit</td>
+                        <td>Establece la anchura del carácter tab  (U+0009) que aparece en un documento HTML. </td>
+                        </tr>
+                        <tr>
+                        <td>table-layout</td>
+                        <td>table-layout: auto | fixed</td>
+                        <td>establece el algoritmo utilizado para diseñar una tabla <code>&lt;table&gt;</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_align">text-align</a></td>
+                        <td>text-align: start | end | left | right | center | justify | match-parent</td>
+                        <td>Establece la alineación horizontal del texto en un elemento bloque o de una celda de tabla.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_align_last">text-align-last</a></td>
+                        <td>text-align-last: auto | start | end | left | right | center | justify</td>
+                        <td>Establece la alineación horizontal de la última línea de texto en un elemento bloque</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration">text-decoration</a></td>
+                        <td>text-decoration: text-decoration-line || text-decoration-style || text-decoration-color</td>
+                        <td>Representa la declaración abreviada de las propiedades <code>text-decoration-line</code>, <code>text-decoration-color</code>, <code>text-decoration-style</code> y de la nueva <code>text-decoration-thickness</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration_color">text-decoration-color</a></td>
+                        <td>text-decoration-color: color</td>
+                        <td>Establece el color de las decoraciones del texto añadidas con <code>text-decoration-line</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration_line">text-decoration-line</a></td>
+                        <td>none | underline || overline || line-through || blink</td>
+                        <td>Establece el tipo de decoración utilizada para el texto</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration_skip">text-decoration-skip</a></td>
+                        <td>text-decoration-skip: none | objects | spaces | edges | ink | box-decoration</td>
+                        <td>Establece dónde y cómo interrumpir la línea decorativa de un texto declarada con <code>text-decoration-line</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration_skip_ink">text-decoration-skip-ink</a></td>
+                        <td>text-decoration-skip-ink: auto | none</td>
+                        <td>Establece dónde y cómo interrumpir la línea decorativa de un texto declarada con <code>text-decoration-line</code>. Equivalente de <code>text-decoration-skip: ink;</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_decoration_style">text-decoration-style</a></td>
+                        <td>text-decoration-style: solid | double | dotted | dashed | wavy</td>
+                        <td>Especifica el estilo de línea utilizada para la decoración de un texto ( declarada con <code>text-decoration-line</code> )</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_indent">text-indent</a></td>
+                        <td>text-indent: longitud | porcentaje | inherit </td>
+                        <td>Especifica la indentación de la primera línea de texto de un elemento de bloque.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_justify">text-justify</a></td>
+                        <td>text-justify: auto | inter-character | inter-word | none</td>
+                        <td>Establece el tipo de justificación del texto cuando <code>text-align: justify;</code></td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_overflow">text-overflow</a></td>
+                        <td>text-overflow: clip | ellipsis | "cadena de texto";</td>
+                        <td>Decide que hacer con el texto que sobresale de la caja por ejemplo cuando  <code>white-space: nowrap</code></td>
+                        </tr>
+                        <tr>
+                        <td>text-rendering</td>
+                        <td>text-rendering: auto | optimizeSpeed | optimizeLegibility | geometricPrecision | inherit</td>
+                        <td>Proporciona información al navegador acerca de como optimizar el texto.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text-shadow.php">text-shadow</a></td>
+                        <td>text-shadow: desplazamiento horizontal desplazamiento vertical desenfoque color;</td>
+                        <td>Aplica una sombra al texto.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_stroke">text-stroke</a></td>
+                        <td>text-stroke: 2px red;</td>
+                        <td>Una propiedad experimental que añade un contorno a los caracteres de texto, similar al <code>stroke</code> en SVG.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/text.php#text_transform">text-transform</a></td>
+                        <td>text-transform: none | capitalize | uppercase | lowercase | full-width | full-size-kana</td>
+                        <td>Especifica como transformar el texto utilizando mayúsculas y minúsculas.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>text-underline-position</td>
+                        <td></td>
+                        <td></td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php#top_right_bottom_left">top</a></td>
+                        <td>top: 1em;</td>
+                        <td>Establece la distancia entre el borde superior de un elemento posicionado ( <code>position:relative | absolute</code> ... ) relativo al borde superior de la caja padre.</td>
+                        </tr>
+                        <!--<tr>
+                        <td>touch-action</td>
+                        <td>touch-action: auto | none | [ [ pan-x | pan-left | pan-right ] || [ pan-y | pan-up | pan-down ] || pinch-zoom ] | manipulation</td>
+                        <td>Muy parecido al <code>pointer-events</code> utilizado para dispositivos tactiles</td>
+                        </tr>-->
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transform.php">transform</td>
+                        <td>transform: none | funcion_de_transformación() | initial | inherit;</td>
+                        <td>Utilizada para mover ( <code>translate</code> ) redimensionar ( <code>scale</code> ) girar ( <code>rotate</code> ) y sesgar ( <code>skew</code> ) el elemento seleccionado.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transform.php#transformOrigin">transform-origin</a></td>
+                        <td>transform-origin: [ left | center | right | top | bottom | porcentaje | longitud ];</td>
+                        <td>Utilizada para cambiar la posición del origen de la transformación de un elemento HTML.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/reversible.php#transform_style">transform-style</a></td>
+                        <td>transform-style: flat | preserve-3d</td>
+                        <td>Decide si los elementos descendientes son posicionados en un edpacio tridimensional o en espacio bidimensional o plano (<code>flat</code>)</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transitions.php">transition</a></td>
+                        <td>transition: propiedad duración función_de_temporizador ( opcional ) demora ( opcional );</td>
+                        <td>Es la declaración abreviada de <code>transition-property</code>, <code>transition-duration</code>, <code>transition-timing-function</code>, y <code>transition-delay</code>.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transitions.php#transition_delay">transition-delay</a></td>
+                        <td>transition-delay: tiempo  [, tiempo]*;</td>
+                        <td>Especifica el número de segundos (s) o milisegundos (ms) antes de empezar la transición.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transitions.php#transition_duration">transition-duration</a></td>
+                        <td>transition-duration: tiempo  [, tiempo]*;</td>
+                        <td>Especifica el número de segundos (s) o milisegundos (ms) entre el comienzo y el fin de la transición.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transitions.php#transition_property">transition-property</a></td>
+                        <td>transition-property: none | propiedad [, propiedad ]*</td>
+                        <td>Especifica la lista de propiedades (separadas por comas) que modificaran su valor durante la transición.</td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/transitions.php#easing">transition-timing-function</a></td>
+                        <td>transition-timing-function: función_de_temporizador</td>
+                        <td>Especifica como varia la velocidad durante la transición.</td>
+                        </tr>
+                        <tr>
+                        <td>unicode-bidi</td>
+                        <td>unicode-bidi: normal | embed | bidi-override | inherit</td>
+                        <td>Utilizada junto con la propiedad <code>direction</code> para especificar cómo manejar el texto bidireccional en el documento</td>
+                        </tr>
+                        <tr>
+                        <td>unicode-range</td>
+                        <td>@font-face{
+                        font-family: "Fuente Ejemplo";
+                        src: url('fuente.woff') format('woff');
+                        <u>unicode-range: U+00-FF;</u> }</td>
+                        <td>Utilizada con <code>@font-face</code> para definir los caracteres disponibles</td>
+                        </tr>
+                        <tr>
+                        <td>user-select</td>
+                        <td>user-select: auto | text | none | contain | all</td>
+                        <td>Controla como el texto de un elemento puede ser seleccionado por el usuario.</td>
+                        </tr>
+                        <tr>
+                        <td>vertical-align</td>
+                        <td>vertical-align: baseline | sub | super | top | text-top | middle | bottom | text-bottom | porcentaje | longitud | inherit;</td>
+                        <td>Controla el alineamiento vertical de un elemento <code>display:inline</code> o una celda de una tabla <code>table</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>visibility</td>
+                        <td>visibility: visible | hidden | collapse | inherit</td>
+                        <td>Especifica si un elemento es visible o no.</td>
+                        </tr>
+                        <tr>
+                        <td>white-space</td>
+                        <td>white-space: normal | nowrap | pre | pre-wrap |inherit</td>
+                        <td>Controla cómo gestionar el espacio en blanco dentro de un elemento</td>
+                        </tr>
+                        <tr>
+                        <td>widows</td>
+                        <td>widows: número entero | inherit</td>
+                        <td>La propiedad <code>widows</code> ( <em class="gem">viudas</em> ) se utiliza con elementos <code>display:block</code> ( parrafos ) situados a final de página o de columna para sugerir el número de líneas después del salto de página o de columna.</td>
+                        </tr>
+                        <tr>
+                        <td>width</td>
+                        <td>width: longitud | porcentaje | auto | inherit</td>
+                        <td>Especifica la anchura de una caja</td>
+                        </tr>
+                        <tr>
+                        <td>will-change</td>
+                        <td>will-change: auto;<br>
+                        will-change: scroll-position;<br>
+                        will-change: contents;<br>
+                        will-change: transform;<br>
+                        will-change: opacity;<br> 
+                        will-change: left, top;</td>
+                        <td>Avisa al navegador que un elemento tiene que cambiar para que este pueda optimizar la página antes del cambio previsto.</td>
+                        </tr>
+                        <tr>
+                        <td>word-break</td>
+                        <td>word-break: normal | break-all | keep-all | break-word</td>
+                        <td>Decide si poner un salto de línea en el medio de una palabra y cómo hacerlo.</td>
+                        </tr>
+                        <tr>
+                        <td>word-spacing</td>
+                        <td>word-spacing: normal | longitud | porcentajes;</td>
+                        <td>Aumenta o disminuye el espacio en blanco entre las palabras</td>
+                        </tr>
+                        <tr>
+                        <td>writing-mode</td>
+                        <td>writing-mode: horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr</td>
+                        <td>Permite establecer la dirección del texto: </td>
+                        </tr>
+                        <tr>
+                        <td><a class="link_to" target="_blank" href="/css3/posicion.php#z_index">z-index</a></td>
+                        <td>z-index: auto | número entero | inherit</td>
+                        <td>Especifica el orden de apilamiento de un elemento posicionado</td>
+                        </tr>
+                        </tbody>
+                        </table> 
+                        <span id="tut-informal"></span><h1><span class="section-number">2.2. </span>Selectores CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                            
+                        <p>En el CSS hay dos tipos de "pseudo-cosas": <mark>pseudo-clases</mark> y <mark>pseudo-elementos</mark>.</p>
+                        <p>Las pseudo-clases (<code>:link</code>, <code>:visited</code>, <code>:active</code>, <code>:hover</code>, <code>:focus</code>, <code>:first-child</code>, <code>:lang</code>... ) 
+                          act&uacute;an como si a&ntilde;adieran una clase al elemento.<br>Los pseudo-elementos (<code>::first-letter</code>, <code>::first-line</code>, <code>::before</code>, <code>::after</code>) act&uacute;an como si nuevos elementos fueran insertados en el documento.</p>
+                        <p>Los dos puntos dobles ( <code>::</code> ) fueron introducidos en el CSS3 como un intento de hacer una distinción entre las :pseudo-clases y los ::pseudo-elementos. Por suerte no pasa nada si no ponemos los dos puntos dobles delante de los pseudo-elementos ( <code>::before </code>), ya que la mayoría de los navegadores entienden el formato antiguo introducido en el CSS2 ( <code>:before</code> ). Es m&aacute;s: IE8 parece no entender los dos puntos dobles ( <code>::before</code> ), pero sí entiende los dos puntos ( <code>:before</code> ).</p>
+                        <p><em class="gem">Una tabla inspirada por <a target="_blank" class="link_to" href="http://www.w3schools.com/cssref/css_selectors.asp">w3schools - CSS Selector Reference</a></em></p>
+                        <table class="cheatsheet selectors">
+                          <thead>
+                            <tr>
+                              <th width="130">Selector</th>
+                              <th>Ejemplo</th>
+                              <th>Descripci&oacute;n</th>
+                              <th>CSS</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector_clase_id_comodin.php#class">.class</a></td>
+                              <td>.laClase</td>
+                              <td>Selecciona todos los elementos con <code>class="laClase"</code></td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector_clase_id_comodin.php#Id">#id</a></td>
+                              <td>#elId</td>
+                              <td>Selecciona todos los elementos con  <code>id="elId"</code></td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector_clase_id_comodin.php#comodin">*</a></td>
+                              <td>*</td>
+                              <td>Selector comodin. Selecciona todos los elementos.</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el">elemento</a></td>
+                              <td>p</td>
+                              <td>Selecciona todos los elementos <code>&lt;p&gt;</code></td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el-lista">elemento, elemento</a></td>
+                              <td>div,p</td>
+                              <td>Selecciona todos los elementos <code>&lt;div&gt;</code> y <code>&lt;p&gt;</code> </td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el-descendiente">elemento<br>elemento</td>
+                              <td>div p</td>
+                              <td>Selecciona todos los elementos <code>&lt;p&gt;</code> dentro de los elementos <code>&lt;div&gt;</code></td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el-hijos">elemento &gt; elemento</a></td>
+                              <td>div&gt; p</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> cuyo elemento padre es un <code>&lt;div&gt;</code></td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el-hijos">elemento + elemento</a></td>
+                              <td>div+p</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> situados inmediatamente despu&eacute;s de un <code>&lt;div&gt;</code></td>
+                              <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-elemento.php#el-hermanos">elemento1 ~ elemento2</a></td>
+                              <td>p ~ ul</td>
+                              <td>Selecciona cada <code>&lt;ul&gt;</code> precedido por un <code>&lt;p&gt;</code> </td>
+                              <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo">[attributo]</a></td>
+                              <td>[target]</td>
+                              <td>Selecciona todos los elementos con un atributo <code>target.</code></td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#valor_atributo">[attributo =<br>valor]</a></td>
+                              <td>[target=_blank]</td>
+                              <td>Selecciona todos los elementos con un atributo <code>target="_blank"</code></td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo_contiene2">[attributo ~= contiene]</td>
+                              <td>[title ~= primero]</td>
+                              <td>Selecciona todos los elementos con un atributo <code>title</code> que contiene <code>"primero"</code> de una lista de palabras separadas por espacios:<br>
+                              ( selecciona: <code>title = "primero parafo"</code>, <code>title = "primero titulo"</code>, etc...  )</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo_empieza2">[attributo |= empieza]</td>
+                              <td>[lang|=en]</td>
+                              <td>Selecciona todos los elementos con un atributo <code>lang</code> que empieza con <code>"en"</code> de una lista de elementos separados por guiones:<br>
+                              ( selecciona: <code>lang = "en"</code>, <code>lang = "en-US"</code> y <code>lang = "en-cockney"</code>  )
+                              </td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo_empieza">[attributo ^= empieza]</a></td>
+                              <td>a[src ^= "https"]</td>
+                              <td>Selecciona todos los  <code>&lt;a&gt;</code> con un atributo <code>src</code> que empieza con<code>"https"</code>.</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo_acaba">[attributo $= acaba]</a></td>
+                              <td>a[src$=".pdf"]</td>
+                              <td>Selecciona todos los <code>&lt;a&gt;</code>con un atributo <code>src</code> que acaba con<code> </code>".pdf"</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-atributo.php#atributo_contiene2">[attributo *= contiene]</td>
+                              <td>a[src *= "css3"]</td>
+                              <td>Selecciona todos los <code>&lt;a&gt;</code> con un atributo <code>src</code> que contiene "css3"</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/link_visited_hover_active.php#link">:link</a></td>
+                              <td>a:link</td>
+                              <td>Selecciona todos los enlaces no visitados</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/link_visited_hover_active.php#visited">:visited</a></td>
+                              <td>a:visited</td>
+                              <td>Selecciona todos los enlaces visitados</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/link_visited_hover_active.php#active">:active</a></td>
+                              <td>a:active</td>
+                              <td>Selecciona todos los enlaces activos</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/link_visited_hover_active.php#hover">:hover</a></td>
+                              <td>a:hover</td>
+                              <td>Selecciona todos los enlaces al pasar por encima.</td>
+                              <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php">::before</a></td>
+                              <td>p:before</td>
+                              <td>Inserta contenido delante de cada elemento<code>&lt;p&gt;</code></td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php">::after</a></td>
+                              <td>p:after</td>
+                              <td>Inserta contenido despu&eacute;s de cada elemento<code>&lt;p&gt;</code></td>
+                              <td>2</td>
+                            </tr>
+                            
+                            
+                            
+                            <tr>
+                              <td>:lang(language)</td>
+                              <td>p:lang(es)</td>
+                              <td>Selecciona cada <code>&lt;p&gt;</code> con un atributo <code>lang="es"</code> ( espa&ntilde;ol )</td>
+                              <td>2</td>
+                            </tr>
+                            
+                            
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-nth-child.php">:nth-child(n)</a></td>
+                              <td>p:nth-child(2)</td>
+                              <td>Selecciona cada <code>&lt;p&gt;</code> que sea el segundo hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-nth-child.php#otras">:nth-last-child(n)</a></td>
+                              <td>p:nth-last-child(2)</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el pen&uacute;ltimo hijo de su padre. ( El segundo a partir del &uacute;ltimo )</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-nth-child.php#otras">:nth-of-type(n)</td>
+                              <td>p:nth-of-type(2)</td>
+                              <td>Selecciona cada <code>&lt;p&gt;</code> que sea el segundo &lt;p&gt; hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-nth-child.php#otras">:nth-last-of-type(n)</td>
+                              <td>p:nth-last-of-type(2)</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el pen&uacute;ltimo &lt;p&gt; hijo de su padre. ( El segundo a partir del &uacute;ltimo )      </td>
+                              <td>3</td>
+                            </tr>
+                            
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-first-letter_first-line.php#first_letter">:first-letter</a></td>
+                              <td>p:first-letter</td>
+                              <td>Selecciona la primera letra de cada <code>&lt;p&gt;</code>.</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-first-letter_first-line.php#first_line">:first-line</td>
+                              <td>p:first-line</td>
+                              <td>Selecciona la primera l&iacute; de cada <code>&lt;p&gt;</code>.</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#first_child">:first-child</a></td>
+                              <td>p:first-child</td>
+                              <td>Selecciona cada <code>&lt;p&gt;</code> que sea el primer hijo de su padre.</td>
+                              <td>2</td>
+                            </tr>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#first_of_type">:first-of-type</a></td>
+                              <td>p:first-of-type</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el primer &lt;p&gt; hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                            
+                            
+                              <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#only_child">:only-child</a></td>
+                              <td>p:only-child</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el &uacute;nico hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#only_of_type">:only-of-type</a></td>
+                              <td>p:only-of-type</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el &uacute;nico &lt;p&gt; hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                          
+                            
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#last_child">:last-child</a></td>
+                              <td>p:last-child</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el &uacute;ltimo hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>
+                         <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-first-last-only.php#last_of_type">:last-of-type</a></td>
+                              <td>p:last-of-type</td>
+                              <td>Selecciona todos los <code>&lt;p&gt;</code> que sean el &uacute;ltimo &lt;p&gt; hijo de su padre.</td>
+                              <td>3</td>
+                            </tr>   
+                            
+                            <tr>
+                              <td>:root</td>
+                              <td>:root</td>
+                              <td>Selecciona el elemento ra&iacute;z de los documentos.<br>
+                              En HTML el elemento ra&iacute;z es siempre el <code>&lt;html.&gt;</code></td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-empty.php">:empty</a></td>
+                              <td>p:empty</td>
+                              <td>Selecciona cada <code>&lt;p&gt;</code> qu <strong>NO</strong> tenga elementos hijos ( Esto implica que tampoco puede tener texto. )</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-target.php">:target</a></td>
+                              <td>#news:target</td>
+                              <td>El selector de destino :target se puede usar para aplicar estilos al elemento de destino activo.</td>
+                              <td>3</td>
+                            </tr>
+                           
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-not.php">:not(selector)</a></td>
+                              <td>:not(p)</td>
+                              <td>Selecciona todos los elementos que NO sean un p&aacute;rafo ( <code>&lt;p&gt;</code> ).</td>
+                              <td>3</td>
+                            </tr>
+                            <tr>
+                              <td>::selection</td>
+                              <td>::selection</td>
+                              <td><p>Selecciona la parte de un elemento seleccionada por el usuario.</p></td>
+                              <td> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                        
+                        <h4>Pseudo-clases para UI ( interfaz de usuario )</h4>
+                        <p>Afecta a los elementos de interfaz de usuario, como por ejemplo los elementos de formulario.</p>
+                        <table class="cheatsheet selectors">
+                          <thead>
+                              <tr>
+                              <th width="130">Selector</th>
+                              <th>Ejemplo</th>
+                              <th>Descripci&oacute;n</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#focus">:focus</a></td>
+                              <td>input:focus</td>
+                              <td>Selecciona el elemento <code>&lt;input&gt;</code> enfocado.</td>
+                          
+                            </tr>
+                            
+                                <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#focus_within">:focus-within</a></td>
+                              <td>form:focus-within</td>
+                              <td>Selecciona un elemento, por ejemplo un formulario, que tiene un elemento hijo focusado..</td>
+                            </tr>
+                            
+                            
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#disabled_enabled">:enabled</a></td>
+                              <td>input:enabled</td>
+                              <td>Selecciona todos los elementos <code>&lt;input&gt;</code> que están habilitados ( permiten la escritura ).</td>
+                              </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#disabled_enabled">:disabled</a></td>
+                              <td>input:disabled</td>
+                              <td>Selecciona todos los elementos <code>&lt;input&gt;</code> deshabilitados ( que no permiten la escritura )</td>
+                              </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selector-checked.php">:checked</a></td>
+                              <td>input:checked</td>
+                              <td>Selecciona todos los elementos <code>&lt;input&gt;</code> ( botones de radio o casillas de verificación ) marcados ( <code>checked</code> )</td>
+                              </tr>
+                            <tr>
+                              <td>:indeterminate</td>
+                              <td>input:indeterminate</td>
+                              <td>Se refiere a las casillas de verificación o botones de radio que no están ni activadas ( <code>checked</code> ) ni desactivadas ( <code>unchecked</code> )<br>
+                          <strong>&iexcl;OJO!</strong><br>
+                                En HTML no existe un atributo "<em class="gem">indeterminate</em>". Es posible hacer que una casilla de verificación sea indeterminate, solo a través de javascript:<br>
+                          <code>checkbox.indeterminate = true;</code>
+                        </td>
+                              </tr>
+                            <tr>
+                              <td>:default</td>
+                              <td>input:default ~ label{<br>
+                              border:1px solid red;<br>
+                              }</td>
+                              <td>Se refiere a las casillas de verificación o botones de radio que están habilitados por defecto. ( No cambia al marcar otra casilla ).</td>
+                              </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#valid_in_range">:valid</a></td>
+                              <td>input[required]:valid{<br>
+                          box-shadow: green;<br>
+                        }</td>
+                              <td>Se refiere a los elementos de formulario que cumplen los requisitos necesarios.</td>
+                              </tr>
+                             <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#invalid_out_of_range">:invalid</a></td>
+                              <td>input[required]:invalid{<br>
+                          box-shadow: red;<br>
+                        }
+                        </td>
+                              <td>Se refiere a los elementos de formulario que <strong>NO</strong> cumplen los requisitos necesarios.</td>
+                              </tr> 
+                             <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#valid_in_range">:in-range</a></td>
+                              <td>input:in-range</td>
+                              <td>Selecciona los elementos cuyo valor esta dentro de los limites establecidos ( por los atributos <code>min</code> y <code>max</code> )<br>
+                                <code>&lt;input type="number" min="1" max="10" value="5"&gt;</code></td>
+                              </tr>  
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#invalid_out_of_range">:out-of-range</a></td>
+                              <td>input:out-of-range</td>
+                              <td>Selecciona los elementos cuyo valor esta fuera de los limites establecidos ( por los atributos <code>min</code> y <code>max</code> )<br>
+                                <code>&lt;input type="number" min="1" max="10" value="15"&gt;</code></td>
+                              </tr>    
+                             <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#required_optional">:required</a></td>
+                              <td>input:required</td>
+                              <td>Selecciona los elementos de formulario obligatorios ( que tienen un atributo <code>required</code> )</td>
+                              </tr> 
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#required_optional">:optional</a></td>
+                              <td>input:optional</td>
+                              <td>Selecciona los elementos de formulario opcionales ( que no tienen un atributo required )</td>
+                              </tr> 
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#read_write_read_only">:read-write</a></td>
+                              <td>input:read-write</td>
+                              <td>Selecciona los elementos de formulario que pueden ser editados por el usuario (elementos <code>contenteditable = "true"</code> o elementos input que no tienen un atributo <code>readonly</code> ).</td>
+                              </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-para-formularios.php#read_write_read_only">:read-only</a></td>
+                              <td>input:read-only</td>
+                              <td>Selecciona los elementos de formulario que <strong>NO</strong> pueden ser editados por el usuario (elementos input que tienen un atributo <code>readonly</code> ).</td>
+                              </tr>      
+                            </tbody>
+                        </table>
+                        </article>
+                        </div><!--<div class="large-12 g_panel">-->
+                        <span id="tut-informal"></span><h1><span class="section-number">2.3. </span>Funciones CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                            
+
+                        <p>Las funciones CSS se utilizan como valor de algunas propiedades CSS. Por ejemplo la funci&oacute;n <code>hsl()</code> se utiliza para definir el color utilizado como valor de algunas propiedades como, <code>background-color</code>, <code>border-color</code>, etc…</p>
+
+                        <table class="funciones">
+                          <thead>
+                            <tr>
+                              <th width="200">Funci&oacute;n</th>
+                              <th>Descripci&oacute;n</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php#atributo">attr()</a></td>
+                              <td>Abreviado de attribute. Es una funci&oacute;n CSS que devuelve una cadena de texto representando el valor de un atributo. Utilizada en el caso de <a class="link_to" target="_blank" href="/css3/selectores-before-after.php">los pseudo-elementos ::before y ::after</a></td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#blur">blur()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> aplica un desenfoque gaussiano, y toma como &uacute;nico par&aacute;metro el radio del blur en pixeles.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#brightness">brightness()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> modifica el brillo de una imagen o de cualquier otro elemento.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/calc.php">calc()</a></td>
+                              <td>Permite realizar operaciones matem&aacute;ticas sencillas como: sumar (&nbsp;+&nbsp;), restar (&nbsp;-&nbsp;), multiplicar (&nbsp;*&nbsp;) o dividir (&nbsp;/&nbsp;)</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/min_max_clamp.php">clamp()</a></td>
+                              <td>Escoge el valor a utilizar de una lista de 3 valores: el m&iacute;nimo, el valor deseado y el m&aacute;ximo.</td>
+                            </tr>
+                            <tr>
+                              <td>circle()</td>
+                              <td>Una funci&oacute;n CSS que define un circulo. Utilizada para definir <a class="link_to" target="_blank" href="/css3/gradientes-radiales.php">gradientes radiales</a>,  un trazado circular para recortar con <a class="link_to" target="_blank" href="/css3/clip-path.php">clip-path</a> o para la propiedad <a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-outside</a></td>
+                            </tr>
+                            <tr>
+                              <td>conic-gradient()</td>
+                              <td>Una funci&oacute;n CSS utilizada para crear gradientes c&oacute;nicos.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#contrast">contrast()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> manipula el contraste de una imagen o de cualquier otro elemento.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/selectores-before-after.php#contador">counter()</a></td>
+                              <td>Utilizada como valor de <code>content</code> ( <a class="link_to" target="_blank" href="/css3/selectores-before-after.php">los pseudo-elementos ::before y ::after</a> ) para a&ntilde;adir un contador, <mark>por ejemplo</mark> delante de los elementos <code>li</code> de una lista.</td>
+                            </tr>
+                            <!--<tr>
+                              <td>counters()</td>
+                              <td>Define</td>
+                            </tr>-->
+                            <tr>
+                              <td>cubic-bezier()</td>
+                              <td>Utilizada en transiciones y animaciones CSS como valor de <code>transition-timing-function</code> o de <code>animation-timing-function</code> para especificar la curva de velocidad de la animaci&oacute;n</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#drop_shadow">drop-shadow()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> aplica una sombra al contorno de un elemento tomando en cuenta las transparencias.</td>
+                            </tr>
+                            <tr>
+                              <td>ellipse()</td>
+                              <td>Una funci&oacute;n CSS que define una elipse. Utilizada para definir <a class="link_to" target="_blank" href="/css3/gradientes-radiales.php">gradientes radiales</a> ,  un trazado elipsoidal para recortar con <a class="link_to" target="_blank" href="/css3/clip-path.php">clip-path</a> o para la propiedad <a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-outside</a></td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#grayscale">grayscale()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> aplica una escala de grises.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/hsl.php">hsl()</a></td>
+                              <td>Una funci&oacute;n CSS que define un color hsl.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/hsl.php">hsla()</a></td>
+                              <td>Una funci&oacute;n CSS que define un color hsla</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#hue_rotate">hue-rotate()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> cambia los colores de una imagen o de cualquier otro elemento.</td>
+                            </tr>
+                            <tr>
+                              <td>inset()</td>
+                              <td>Una funci&oacute;n CSS utilmatrix3d()izada con <a class="link_to" target="_blank" href="/css3/clip-path.php">clip-path</a> o con la propiedad <a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-outside</a> para mover el limite exterior de una caja hacia dentro.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#invert">invert()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> crea el negativo de la imagen original.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/gradientes-lineales.php">linear-gradient()</a></td>
+                              <td>Una funci&oacute;n CSS utilizada para definir gradientes lineales</td>
+                            </tr>
+                            <tr>
+                              <td>matrix()</td>
+                              <td>Define una transformaci&oacute;n 2D, utilizando una matriz de 6 valores. </td>
+                            </tr>
+                            <tr>
+                              <td>matrix3d()</td>
+                              <td>Define una transformaci&oacute;n 3D, utilizando una matriz de 4x4 = 16 valores.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/min_max_clamp.php">max()</a></td>
+                              <td>Escoge el valor m&aacute;ximo de una lista de valores.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/min_max_clamp.php">min()</a></td>
+                              <td>Escoge el valor m&iacute;nimo de una lista de valores.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#opacity">opacity()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> cambia la opacidad de un elemento.</td>
+                            </tr>
+                            <tr>
+                              <td>polygon()</td>
+                              <td>Una funci&oacute;n CSS que define un pol&iacute;gono. Utilizada para definir 
+                        un trazado poligonal para recortar con <a class="link_to" target="_blank" href="/css3/clip-path.php">clip-path</a> o para la propiedad <a class="link_to" target="_blank" href="/css3/shape-outside.php">shape-outside</a></td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/gradientes-radiales.php">radial-gradient()</a></td>
+                              <td>Una funci&oacute;n CSS que define un gradiente radial</td>
+                            </tr>
+                            <tr>
+                              <td>repeating-linear-gradient()</td>
+                              <td>Una funci&oacute;n CSS utilizada para crear gradientes lineales repetitivos</td>
+                            </tr>
+                            <tr>
+                              <td>repeating-radial-gradient()</td>
+                              <td>Una funci&oacute;n CSS utilizada para crear gradientes radiales repetitivos</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/rgb.php">rgb()</a></td>
+                              <td>Una funci&oacute;n CSS que define un color rgb</td>
+                            </tr>  
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/rgb.php">rgba()</a></td>
+                              <td>Una funci&oacute;n CSS que define un color rgba</td>
+                            </tr> 
+                            
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/transform.php#rotate">rotate()</a></td>
+                              <td>Define una rotacti&oacute;n 2D, donde a es el &aacute;ngulo ( en grados hexagesimales ), donde a es el &aacute;ngulo de rotaci&oacute;n.</td>
+                            </tr>
+                            <tr>
+                              <td>rotate3d()</td>
+                              <td>Define una rotaci&oacute;n en un espacio tridimensional ( 3D )</td>
+                            </tr>
+                            <tr>
+                              <td>rotateX()</td>
+                              <td>Define una rotaci&oacute;n en 3D alrededor del eje x></td>
+                            </tr>
+                            <tr>
+                              <td>rotateY()</td>
+                              <td>Define una rotaci&oacute;n en 3D alrededor del eje y</td>
+                            </tr>
+                            <tr>
+                              <td>rotateZ()</td>
+                              <td>Define una rotaci&oacute;n en 3D alrededor del eje z</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/filtros.php#saturate">saturate()</a></td>
+                              <td>Utilizada como valor de <code>filter</code> modifica la saturation de los colores de una imagen</td>
+                            </tr>
+                            <tr>
+                              <td>sepia()</td>
+                              <td>Utilizada como valor de <code>filter</code> convierte una imagen tonos de sepia.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/transform.php#scale">scale()</a></td>
+                              <td>Redimensiona un elemento 2D</td>
+                            </tr> 
+                            <tr>
+                              <td>scale3d()</td>
+                              <td>Redimensiona un elemento en un espacio tridimensional ( 3D )</td>
+                            </tr> 
+                            <tr>
+                              <td>scaleX()</td>
+                              <td>Redimensiona un elemento en un espacio tridimensional en la direcci&oacute;n del eje x</td>
+                            </tr>
+                            <tr>
+                              <td>scaleY()</td>
+                              <td>Redimensiona un elemento en un espacio tridimensional en la direcci&oacute;n del eje y</td>
+                            </tr>
+                            <tr>
+                              <td>scaleZ()</td>
+                              <td>Redimensiona un elemento en un espacio tridimensional en la direcci&oacute;n del eje z</td>
+                            </tr>
+                            <!--<tr>
+                            <td>symbols()</td>
+                              <td>Define.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</td>
+                            </tr>-->
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/transform.php#skew">skew(ax,ay)</a></td>
+                              <td>Sesga un elemento a lo largo de sus dos ejes x e y donde <code>ax</code> es el &aacute;ngulo de deformaci&oacute;n en x y <code>ay</code> es el &aacute;ngulo de deformaci&oacute;n en y</td>
+                            </tr>
+                            <tr>
+                              <td>skewX(ax)</td>
+                              <td>Sesga un elemento a lo largo del eje x (horizontal), donde ax es el &aacute;ngulo de deformaci&oacute;n en <code>x</code>.</td>
+                            </tr>  
+                            <tr>
+                              <td>skewY(ay)</td>
+                              <td>Sesga un elemento a lo largo del eje y (horizontal), donde ay es el &aacute;ngulo de deformaci&oacute;n en <code>y</code>.</td>
+                            </tr>
+                            <tr>
+                              <td><a class="link_to" target="_blank" href="/css3/transform.php#translate">translate()</a></td>
+                              <td>Traslada o mueve un elemento a lo largo de los ejes  x e y</td>
+                            </tr>
+                            <tr>
+                              <td>translate3d()</td>
+                              <td>Traslada o mueve un elemento en un espacio tridimensional ( 3D ) a lo largo de los ejes  <code>x</code>, <code>y</code> y <code>z</code></td>
+                            </tr>
+                            <tr>
+                              <td>translateX()</td>
+                              <td>Traslada o mueve un elemento en un espacio tridimensional ( 3D ) a lo largo del eje  <code>x</code></td>
+                            </tr>
+                            <tr>
+                              <td>translateY()</td>
+                              <td>Traslada o mueve un elemento en un espacio tridimensional ( 3D ) a lo largo del eje  <code>y</code></td>
+                            </tr>  
+                            <tr>
+                              <td>translateZ()</td>
+                              <td>Traslada o mueve un elemento en un espacio tridimensional ( 3D ) a lo largo del eje  <code>z</code></td>
+                            </tr>
+                            <tr>
+                              <td>url()</td>
+                              <td>Una funci&oacute;n CSS que permite enlazar con una imagen ( <code>background-image</code>, <code>border-image</code> ) una fuente ( <a class="link_to" target="_blank" href="/css3/font-face.php">@font-face</a> ), un <a class="link_to" target="_blank" href="/css3/filtros.php#url">filtro</a> etc...</td>
+                            </tr> 
+                         </tbody>        
+                         </table>   
+                        </article>
+                        <span id="tut-informal"></span><h1><span class="section-number">2.4. </span>Unidades CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                            
+
+
+                        <div class="large-12" id="chuletacss3">
+
+
+                            <h4>Unidades relativas</h4>
+                            <p>Las unidades relativas especifican el valor de la longitud relativo al valor de otra longitud. Las hojas de estilo que utilizan unidades relativas pueden ser redimensionadas f&aacute;cilmente.</p>
+                            <table class="cheatsheet selectors">
+                              <thead>
+                                <tr>
+                                  <th>Unidad</th>
+                                  <th>Ejemplo</th>
+                                  <th>Descripci&oacute;n</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                  <td>%</td>
+                                  <td>
+                            <code style="white-space: nowrap;">p {<br>
+                            font-size:16px;<br>
+                            line-height:150%;<br>
+                            }</code></td>
+                                  <td>El valor de una propiedad expresado en porcentajes.<br>
+                            Relativo a otro valor, normalmente un valor heredado del elemento padre.<br>
+                            Utilizados para unidades de <strong>longitud, &aacute;ngulos, tiempo, números, frecuencia</strong>.
+                            </td>
+                                </tr> 
+                                <tr>
+                                  <td>em</td>
+                                  <td>
+                            <code style="white-space: nowrap;">span {<br>
+                            display:inline-block;<br>
+                            width:5em;<br>
+                            }</code></td>
+                                  <td>Representa el tamaño de una letra <strong>"M"</strong> de la fuente del elemento.</td>
+                                </tr>
+                                <tr>
+                                  <td>ex</td>
+                                  <td>
+                            <code style="white-space: nowrap;">span {<br>
+                            display:inline-block;<br>
+                            width:5ex;<br>
+                            }</code></td>
+                                  <td>Representa la altura de una letra <strong>"x"</strong> de la fuente del elemento.</td>
+                                </tr>
+                                <tr>
+                                  <td>ch</td>
+                                  <td>
+                            <code style="white-space: nowrap;">span {<br>
+                            display:inline-block;<br>
+                            width:5ch;<br>
+                            }</code></td>
+                                  <td>Representa el tamaño de <strong>"0"</strong> (ZERO, U+0030) de la fuente del elemento.</td>
+                                </tr>
+                                <tr>
+                                  <td>rem</td>
+                            <td><code style="white-space: nowrap;">h1 {<br>
+                            font-size:2rem;<br>
+                            }</code></td>
+                                  <td>Representa el tamaño de fuente del elemento raiz. ( En el HTML el tamaño de fuente del elemento &lt;html&gt; )</td>
+                                </tr>
+                                <tr>
+                                  <td>vw</td>
+                                  <td>
+                            <code style="white-space: nowrap;">div {<br>
+                            width:50vw;<br>
+                            }</code></td>
+                                  <td>Represemta el 1% de la anchura del viewport</td>
+                                </tr>
+                                <tr>
+                                  <td>vh</td>
+                                  <td>
+                            <code style="white-space: nowrap;">div {<br>
+                            height:50vh;<br>
+                            }</code></td>
+                                  <td>Represemta el 1% de la altura del viewport</td>
+                                </tr>
+                                <tr>
+                                  <td>vmin</td>
+                            <td><code style="white-space: nowrap;">div {<br>
+                            width:50vmin;<br>
+                            }</code>
+                                  <td>Representa el menor entre <code>vw</code> y <code>vh</code></td>
+                                </tr>
+                                <tr>
+                                  <td>vmax</td>
+                            <td><code style="white-space: nowrap;">div {<br>
+                            width:50vmax;<br>
+                            }</code>
+                                  <td>Representa el mayor entre <code>vw</code> y <code>vh</code></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            
+                            
+                            <h4>Unidades absolutas</h4>
+                            <p>Las unidades absolutas son fijas en relaci&oacute;n con otras. Estas medidas son dadas en unidades f&iacute;sicas conocidas como cent&iacute;metros, mil&iacute;metros  pulgadas,  o pixeles , y pueden ser muy útiles en diseños de p&aacute;gina con dimensiones fijas.</p>
+                            <table class="cheatsheet selectors">
+                              <thead>
+                                <tr>
+                                  <th>Unidad</th>
+                                  <th>Ejemplo</th>
+                                  <th>Descripci&oacute;n</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                  <td>cm</td>
+                                  <td><code>h2{line-height:3cm;}</code></td>
+                                  <td>1 cm = 96 px/2.54<br>
+                                  1 cm = 37.79528 px</td>
+                                </tr>
+                                <tr>
+                                  <td>mm</td>
+                                  <td><code>h3{word-spacing:4mm;}</code></td>
+                                  <td>1mm = 1/10 cm<br>
+                                  1 mm = 3.779528 px</td>
+                                </tr>
+                                <tr>
+                                  <td>Q</td>
+                                  <td><code>h3{letter-spacing:1Q;}</code></td>
+                                  <td>un cuarto de mil&iacute;metro<br>
+                                  1 Q = 1/40 cm<br>
+                                  1 Q =  0.94 px</td>
+                                </tr>
+                                <tr>
+                                  <td>in</td>
+                                  <td><code>h1{margin: 0.5in;}</code></td>
+                                  <td>
+                                  1 pulgada = 2.54cm<br>
+                                  1 pulgada = 96px o<br>
+                                  1 pulgada = 72pt
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>pc</td>
+                                  <td><code>h4{font-size:1pc;}</code></td>
+                                  <td>El <strong>c&iacute;cero</strong> o <strong>pica</strong> es una unidad de medida tipogr&aacute;fica de aproximativamente 1/6 pulgadas<br>
+                                  1 pc = 16 px</td>
+                                </tr>
+                                <tr>
+                                  <td>pt</td>
+                                  <td><code>h4{font-size:12pt;}</code></td>
+                                  <td>1pt = 1/72 in<br>
+                                  1 pt = 1.333333 px</td>
+                                </tr>
+                                <tr>
+                                  <td>px</td>
+                                  <td><code>p  { font-size: 12px </code>}</td>
+                                  <td>P&iacute;xeles</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            
+                            
+                            
+                            <h4>Unidades para &aacute;ngulos</h4>
+                            <p>Utilizadas para crear gradientes o para trasformaciones CSS (rotate).</p>
+                            <table class="cheatsheet selectors">
+                              <thead>
+                                <tr>
+                                  <th>Unidad</th>
+                                  <th>Ejemplo</th>
+                                  <th>Descripci&oacute;n</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                  <td>deg</td>
+                                  <td><code>.giro{transform: rotate(-90deg);}</code></td>
+                                  <td>Grado sexagesimal. Hay 360 grados en un circulo completo.</td>
+                                </tr>
+                                <tr>
+                                  <td>grad</td>
+                                  <td><code>.giro{transform: rotate(-100grad);}</code></td>
+                                  <td>Grado centesimal o gon, tambi&eacute;n llamado gradi&aacute;n. Hay 400 gradianes en un circulo completo.</td>
+                                </tr>
+                                <tr>
+                                  <td>rad</td>
+                                  <td><code>.giro{transform: rotate(-1.57rad);}</code></td>
+                                  <td>Radi&aacute;n. Hay <code>2*Math.PI</code> radianes en un circulo completo.</td>
+                                </tr>
+                                <tr>
+                                  <td>turn</td>
+                                  <td><code>.giro{transform: rotate(-.25turn);}</code></td>
+                                  <td>Un giro completo de 360deg</td>
+                                </tr>    
+                            </tbody>
+                            </table>
+                            <h4>Unidades de tiempo</h4>
+                            <p>En CSS el tiempo se expresa en segundos ( <code>s</code> ) o milisegundos ( <code>ms</code> ), y es utilizado para crear animaciones y transiciones.</p>
+                            <table class="cheatsheet selectors">
+                              <thead>
+                                <tr>
+                                  <th>Unidad</th>
+                                  <th>Ejemplo</th>
+                                  <th>Descripci&oacute;n</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                  <td>s</td>
+                                  <td>
+                            <code>div {<br>
+                                transition-duration: .5s;<br>
+                            }</code></td>
+                                  <td>Segundo</td>
+                                </tr>
+                                <tr>
+                                  <td>ms</td>
+                                  <td>
+                            <code>div {<br>
+                                transition-duration: 500ms;<br>
+                            }</code></td>
+                                  <td>Milisegundo. Hay 1000 milisegundos en un segundo  </td>
+                                </tr>   
+                            </tbody>
+                            </table>
+                            <!--
+                            <table class="cheatsheet selectors">
+                              <thead>
+                                <tr>
+                                  <th>Unidad</th>
+                                  <th>Ejemplo</th>
+                                  <th>Descripci&oacute;n</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                  <td>Hz</td>
+                                  <td></td>
+                                  <td>Hercio</td>
+                                </tr>
+                                <tr>
+                                  <td>kHz</td>
+                                  <td></td>
+                                  <td>Kilohercio. Hay 1000 hercios en un kilohercio</td>
+                                </tr>   
+                            </tbody>
+                            </table> -->      
+                            </div>   
+                            </article>                                                                                          
+                    </div>
+                </div>
+            </div>                                 
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

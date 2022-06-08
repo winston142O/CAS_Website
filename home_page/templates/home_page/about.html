@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Python101</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center><div class="col-lg-6">
+            <h2>¿Quiénes somos?</h2>
+            <p class="lead">Nuestro equipo de trabajo.</p>
+        </div></center>
+        <div id="custom-menu">
+            <ul class="one">
+                <li>Winston Pichardo</li>
+                <li>Leandro Pérez</li>
+                <li>Miguel Martínez</li>
+                <li>Khalil Mustafá</li>
+                <li>Rubén Sánchez</li>
+            </ul>
+        </div>
+        <div class="images">
+            <ul class="two">
+                <li><img class="img-fluid" src="https://i.imgur.com/CEDYAD9.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/EiWUpVd.jpg" alt="..." style="padding:12px;"width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/YV8nh6g.jpg" alt="..." style="padding:12px;"width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/8oHo0go.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/GyFtb6X.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://www.teahub.io/photos/full/48-484273_photo-wallpaper-the-sky-clouds-macro-goal-blur.jpg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <section>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Nuestros objetivos</h2>
+                        <p class="lead">Nuestra misión es nuestra visión.</p>
+                        <br>
+                        <p class="mb-0">Somos un grupo de estudiantes del instituto Iberia con el objetivo de enseñar y y ayudar a todo tipo de personas que deseen aprender a programar o reforzar sus conocimientos, y facilitarle un aprendizaje de calidad sin ningún costo. No solamente buscamos enseñar, si no que también buscamos crear una comunidad de programadores en constante crecimiento que se ayude mútuamente.</p>
+                        <br>
+                        <p class="mb-0">Queremos compartir conocimientos sobre la programación a cualquier persona que los quiera, y también otorgarle una comunidad donde preguntar y también responder otras preguntas, ayudándose mútuamente, ya que como cualquier programador con experiencia diría, una gran parte de "aprender a programar" es leer y investigar, si una persona tuvo el mismo problema que tú es posible que la misma solución que le funcionó a esa persona te funcione a ti, por eso es importante tener una comunidad de programadores samaritanos, como la nuestra.</p>
+                        <!--<img class="img-fluid" src="" alt="..." />-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://i.imgur.com/F7IDOy3.jpg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <section>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Información de contacto.</h2>
+                        <p class="lead">Contáctanos usando tu método preferido...</p>
+                        <br>
+                        <p class="mb-0">Estamos a tu disposición para cualquier tipo de pregunta o inquietud que tengas, nos puedes hablar de <strong>lunes a viernes</strong> desde las <strong>3pm</strong> hasta las <strong>8pm</strong>.</p>
+                        <br>
+                        <ul>
+                            <li>Teléfono: <strong>+1 849-918-0607</strong></li>
+                            <br>
+                            <li>Email: <strong>sossstech@gmail.com</strong></li>
+                            <br>
+                            <li>Instagram: <strong>sos_techcode</strong></li>
+                            <br>
+                        </ul>
+                        <!--<img class="img-fluid" src="" alt="..." />-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+    </body>
+</html>

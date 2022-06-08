@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-informal"></span><h1><span class="section-number">4. Etiquetas de Cabecera</span><a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1><p class="lead">Tutoriales proporcionados por la <a href="https://lenguajehtml.com/html/" target="blank">documentación oficial de HTML</a></p>
+                        <span id="tut-informal"></span><h1><span class="section-number">4.1. </span>Etiquetas HTML de relación<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                        
+                        <p>Habíamos mencionado que la <a href="/html/introduccion/estructura-documento-html">estructura de un documento HTML</a> debía contener siempre dos etiquetas HTML principales: la cabecera de la página o <code>&lt;head&gt;</code> y el cuerpo de la página o <code>&lt;body&gt;</code> . El primero de ellos, del que hablaremos en este apartado, se encarga de contener <strong>etiquetas de metadatos</strong> (<em>información sobre el documento</em>) así como establecer <strong>relaciones con otros documentos</strong>. El segundo de ellos, se encarga de la parte visual que verá el usuario en el navegador.</p>
+                        <h3 id="cabecera-del-documento" tabindex="-1">Cabecera del documento</h3>
+                        <p>Existen varias etiquetas que se suelen utilizar en esta sección de cabecera del documento:</p>                        
+                    </div>
+                    <center><img src="https://i.imgur.com/B8wc0tv.png"></center>
+                    <div class="col-lg-6">
+                        <p>Existe dos etiquetas que tradicionalmente solían incluirse en la cabecera de un documento HTML. Sin embargo, actualmente también pueden utilizarse en el cuerpo de la página. Hablamos de las etiquetas <code>&lt;style&gt;</code> y <code>&lt;script&gt;</code>.</p>
+                        <ul>
+                        <li>La etiqueta <code>&lt;style&gt;</code> sirve para <a href="https://lenguajecss.com/css/introduccion/como-usar-css/#incluir-css-en-el-html-style">incluir estilos CSS en la propia página HTML</a>.</li>
+                        <li>La etiqueta <code>&lt;script&gt;</code> sirve para incluir código Javascript en la propia página HTML (<em>o de forma externa</em>), pero tiene una explicación mucho más extensa y la retomaremos más adelante.</li>
+                        </ul>
+                        <h3 id="título-y-codificación" tabindex="-1">Título y codificación</h3>
+                        <p>En el interior de la etiqueta <code>&lt;head&gt;</code> es aconsejable, como mínimo, indicar siempre las siguientes dos etiquetas:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Título del documento<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este ejemplo, la etiqueta <code>&lt;meta&gt;</code> indica que el navegador utilice la <strong>codificación UTF-8</strong> para mostrar el texto. Es muy importante utilizar siempre de forma coherente una misma codificación en todos nuestros documentos, de esta forma evitaremos problemas con vocales acentuadas, o carácteres como <code>ñ</code> , <code>¿</code> , <code>¡</code> u otros.</p>
+                        <p>Para evitar este tipo de problemas, se recomienda siempre realizar los siguientes pasos:</p>
+                        <ol>
+                        <li>Utilizar la etiqueta <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> en la cabecera del documento.</li>
+                        <li>Guarda el archivo HTML con codificación <strong>UTF-8</strong> en las opciones del editor que utilicemos.</li>
+                        <li>Si aún tenemos problemas de codificación, revisar la configuración del servidor web (<em>server-side</em>).</li>
+                        </ol>
+                        <p>De esta forma reducimos la probabilidad de tener problemas de este tipo.</p>
+                        <h3 id="otros-documentos" tabindex="-1">Otros documentos</h3>
+                        <p>Como habíamos comentado, la etiqueta <code>&lt;link&gt;</code> permite establecer relaciones con otros documentos. De esta forma, el navegador o cualquier sistema capaz de leer código web puede saber que un documento HTML está relacionado con otro documento (<em>independientemente del formato que sea</em>) y así relacionarse entre ellos.</p>
+                        <p>Veamos algunos ejemplos de relaciones que podemos establecer.</p>
+                        <h4 id="versiones-alternativas" tabindex="-1">Versiones alternativas</h4>
+                        <p>Con el valor <code>alternate</code> en el atributo <code>rel</code> de la etiqueta <code>&lt;link&gt;</code> podemos indicar que el documento actual tiene versiones alternativas en otros formatos o idiomas. El siguiente ejemplo indica que el documento HTML que estamos leyendo tiene una versión en PDF, y además, una versión HTML en inglés:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alternate<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>document.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>application/pdf<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alternate<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>document-en.html<span class="token punctuation">"</span></span> <span class="token attr-name">hreflang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <h4 id="referencias-a-datos" tabindex="-1">Referencias a datos</h4>
+                        <p>El atributo <code>rel</code> también nos permite indicar el tipo de relación que tiene el documento referenciado. Por ejemplo, a continuación indicamos una referencia al autor del documento, a la zona de ayuda, la zona de búsqueda y la licencia que cubre el contenido de la página:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>author<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://twitter.com/Manz<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>help<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/ayuda/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/busqueda/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>license<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://lenguajehtml.com/licencia/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <h4 id="favicon-icono-de-pestañas" tabindex="-1">Favicon (icono de pestañas)</h4>
+                        <p>Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocarnos unos iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como <code>favicons</code> (<em>iconos de favoritos</em>) ya que fue un invento de <strong>Internet Explorer</strong> para colocar el icono cuando el usuario añadía una página a favoritos:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>shortcut icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/favicon.ico<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- HTML4 --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>64x64<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/favicon.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- HTML5 --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-touch-icon<span class="token punctuation">"</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>180x180<span class="token punctuation">"</span></span>
+                                <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/apple-touch-icon-180x180.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- iPhone/iPad --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>msapplication-TileImage<span class="token punctuation">"</span></span>
+                                <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/mstile-144x144.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- Windows Phone --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Desgraciadamente, esta característica no está definida en la especificación, por lo que cada navegador (<em>¡y cada sistema operativo!</em>) la implementa como quiere. Hay navegadores que sólo soportan favicon en formato PNG, otros que solo soportan resoluciones específicas, etc.</p>
+                        <blockquote>
+                        <p>Para generar los favicons de una forma más cómoda, aconsejo utilizar la herramienta <a href="https://realfavicongenerator.net/">Real Favicon Generator</a>, a la cuál le pasamos un logo a alta resolución y nos generará un <code>.zip</code> con el código y diferentes versiones y resoluciones de los iconos.</p>
+                        </blockquote>
+                        <h4 id="posicionamiento-google" tabindex="-1">Posicionamiento (Google)</h4>
+                        <p>La etiqueta <code>&lt;link&gt;</code> también nos permite indicar algunos datos interesantes de cara al buscador para evitar ser marcado como <strong>contenido duplicado</strong> o indicarle al buscador exactamente las URLs que debe tener en cuenta. Para ello, podemos utilizar los siguientes atributos:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/1CHypMF.png"></center>
+                    <div class="col-lg-6">
+                        <p>Por último, otra de las funciones más conocidas y utilizadas de la etiqueta <code>&lt;link&gt;</code> es la de establecer una relación con un <a href="http://lenguajecss.com/">documento CSS</a> para aplicar estilos a la página HTML actual (<em>y a todas las que establezcan una relación a ella</em>).</p>
+                        <p>Para ello, no hay más que utilizar el valor <code>stylesheet</code> en el atributo <code>rel</code> de la siguiente forma:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Con esto, el documento HTML estará relacionado con el documento CSS <code>index.css</code> , y aplicará todos los estilos CSS que se encuentren en él. El atributo <code>type</code> es opcional y no se suele indicar, puesto que el tipo por defecto de las hojas de estilos ya es <code>text/css</code>.</p>
+                        <span id="tut-informal"></span><h1><span class="section-number">4.2. </span>Etiquetas HTML de metadatos<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                        
+                        <p>Quizás, la etiqueta con mayor número de posibilidades en la cabecera de un documento HTML es la etiqueta <code>&lt;meta&gt;</code>. En ella, y a través de los atributos <strong>name</strong> y <strong>content</strong> podemos indicar una gran cantidad de metadatos al documento. Veamos los más conocidos:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/KboHTm5.png"></center>
+                    <div class="col-lg-6">
+                        <h4 id="tema-de-color-del-navegador" tabindex="-1">Tema de color del navegador</h4>
+                        <p>Un cambio muy reciente, incluído por parte de Google en <strong>Google Chrome</strong> y dispositivos Android, es el atributo <strong>theme-color</strong> que colorea la barra de direcciones del navegador:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theme-color<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#1e7bbf<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p class="mb-0">Con esto conseguiremos que, un dispositivo móvil con Android y Google Chrome, muestre la barra de navegación de la siguiente forma:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/ylUmtGq.jpg"></center>
+                    <div class="col-lg-6">
+                        <h4 id="metadatos-para-google" tabindex="-1">Metadatos para Google</h4>
+                        <p>Al margen de etiquetas <code>&lt;meta&gt;</code> como <strong>description</strong> o <code>&lt;title&gt;</code>, que las entiende y procesa perfectamente para crear los resultados de búsqueda, Google es capaz de leer otros metadatos que le indicarán como realizar ciertas acciones:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/SmL3sam.png"></center>
+                    <div class="col-lg-6">
+                        <p>Un pequeño ejemplo de esta etiqueta con los citados atributos:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>google<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nositelinkssearchbox<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>google<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notranslate<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>robots<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index, nofollow<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Por su parte, la etiqueta <code>&lt;meta name=&quot;robots&quot;&gt;</code> puede tener varios parámetros (<em>separados por comas</em>) para indicarle a Google diferentes detalles:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/VWaThOQ.png"></center>
+                    <div class="col-lg-6">
+                        <h4 id="metadatos-de-cabeceras" tabindex="-1">Metadatos de cabeceras</h4>
+                        <p>Existe una serie de metadatos especiales que indican a los robots del buscador o al navegador, que deben modificar las cabeceras HTTP para realizar acciones que suelen hacerse desde el lado del servidor. Para ello, en lugar de utilizar el atributo <strong>name</strong>, utilizamos el atributo <strong>http-equiv</strong>. Sin embargo, estas etiquetas pueden ser ignoradas por algunos navegadores o robots de búsqueda y se utilizan por motivos históricos.</p>
+                        <p>Algunos ejemplos de estos atributos son los siguientes:</p>
+                    </div>
+                    <center><img src="https://i.imgur.com/8mqh0eJ.png"></center>
+                    <div class="col-lg-6">
+                        <p>Y finalmente, un ejemplo aplicando cada una de estas etiquetas:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>refresh<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300;url=http://www.emezeta.com/<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>expires<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Fri, 29 Apr 2016 12:56:00 GMT<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pragma<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no-cache<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cache-control<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no-cache<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <span id="tut-informal"></span><h1><span class="section-number">4.3. </span>Etiquetas HTML de redes sociales<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>                        
+                        <p>Al igual que vimos como establecer un título y descripción para un documento HTML, es posible definir una serie de <strong>etiquetas de metadatos</strong> orientadas a <strong>redes sociales</strong> como Facebook o Twitter. De esta forma, al margen de los datos del documento HTML, podemos indicar títulos o descripciones diferentes, orientadas al público de cada red social.</p>
+                        <h3 id="facebook-open-graph" tabindex="-1">Facebook (Open Graph)</h3>
+                        <p>Facebook utiliza <a href="http://ogp.me/">Open Graph</a>, un protocolo que permite dotar de metadatos orientados a redes sociales. Al compartir un enlace de una página en Facebook, de forma automática, <strong>Facebook</strong> analiza el código HTML en busca de metadatos.</p>
+                        <p>Si no los encuentra, se crea sus propios metadatos en base a criterios internos (<em>que podrían ser incorrectos</em>). Por ejemplo, Facebook podría analizar la página y, como no existen metadatos, poner como imagen de presentación del enlace, una imagen de un usuario que comenta, y no la imagen correspondiente al propio artículo. Sin embargo, si tenemos los metadatos sociales de <strong>Open Graph</strong> especificados, podría aparecer algo parecido a esto:</p>
+                    </div>                        
+                    <img src="https://lenguajehtml.com/html/cabecera/etiquetas-html-para-redes-sociales/metadatos-sociales-open-graph-facebook.jpg" alt="Metadatos sociales: Open Graph (Facebook)" width="1024" height="474" loading="lazy">
+                    <div class="col-lg-6">
+                        <p>Con <strong>Open Graph</strong> podemos personalizar los datos que queremos que se ofrezcan cuando un usuario comparta el enlace en Facebook o lo envíe por un mensaje privado. Un ejemplo básico para páginas genéricas (<em>con título, imagen, descripción y tipo de página</em>) podría ser el siguiente:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>og:type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>article<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>og:title<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Título del post<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>og:image<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://pagina.com/img/imagen32.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>og:description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Descripción de la página<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Algunos enlaces interesantes sobre <strong>Open Graph</strong>:</p>
+                        <ul>
+                        <li><a href="https://developers.facebook.com/tools/debug/og/object/">Open Graph Debugger</a>: Herramienta de validación de Open Graph que permite comprobar si el código es correcto y no hay ningún error en la utilización del protocolo en nuestro documento HTML.</li>
+                        </ul>
+                        <h3 id="twitter-twitter-cards" tabindex="-1">Twitter (Twitter Cards)</h3>
+                        <p>Por su parte, Twitter utiliza <a href="https://dev.twitter.com/cards/overview">Twitter Cards</a>, un sistema que permite integrar metadatos para su uso en la red social de Twitter, y enriquecer la información de tweets donde se mencionan o enlazan páginas de nuestro sitio web.</p>
+                        <p>Datos como el formato y tipo de la información mostrada, el nombre del autor de la página del enlace, el título, descripción e imagen de presentación son perfectamente personalizables desde <strong>Twitter Cards</strong>, que mostraría una apariencia similar a la siguiente:</p>
+                    </div>
+                    <img src="https://lenguajehtml.com/html/cabecera/etiquetas-html-para-redes-sociales/metadatos-sociales-twittercards.jpg" alt="Metadatos sociales: Twitter Cards (Twitter)" width="1024" height="600" loading="lazy">
+                    <div class="col-lg-6">
+                        <p>Para utilizar <strong>Twitter Cards</strong> se requiere dar de alta previamente en <a href="https://dev.twitter.com/">Twitter Developers</a> así como pasar un pequeño proceso de moderación para saber si tu página cumple los requisitos para utilizar este tipo de metadatos en la red de Twitter. Respecto al código a utilizar, es muy sencillo:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>twitter:card<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>summary_large_image<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>twitter:creator<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@Manz<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>twitter:title<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Título<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>twitter:description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Descripción<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>twitter:image:src<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>URL_img.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                    </div>
+                    <center><img src=""></center>
+                    <div class="col-lg-6">
+
+                    </div>
+                    <div class="col-lg-6">
+
+                    </div>
+                    <center><img src=""></center>
+                    <div class="col-lg-6">
+
+                    </div>
+                    <center><img src=""></center>
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+            </section>
+            <!-- Image element - set the background image for the header in the line below-->
+            <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+                <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+                <div style="height: 20rem"></div>
+            </div>
+            <!-- Content section-->
+            <!-- Footer-->
+            <footer class="py-5 bg-dark">
+                <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+            </footer>
+            <!-- Bootstrap core JS-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Core theme JS-->
+            <script src='js/scripts.js'></script>
+        </body>
+    </html>

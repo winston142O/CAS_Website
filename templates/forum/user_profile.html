@@ -1,0 +1,115 @@
+{% load static %}
+{% load mytemplates %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        {% for post in posts %}
+        <header class="py-5 bg-image-full" style="background-image: url({{ post.author.profile.bg_image.url }})">
+        {% endfor %}
+            <div class="text-center my-5">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>   
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content Section PROFILE -->
+        <section class="py-5">
+            <div class="container my-5">
+                        <div class="content-section">
+                            {% for post in posts %}
+                               <div class="flex-container">
+                                <img class="rounded-circle profile-img" src="{{ post.author.profile.image.url }}"/>
+                                <div class="profile-body">
+                                    <h2 class="account-heading">{{ view.kwargs.username }}</h2> <!-- only This works -->
+                                    <p class="text-secondary">{{ post.author.first_name }} {{ post.author.last_name }}</p>
+                                    <p class="text-secondary">{{ post.author.email }}</p>
+                                    <div class="flex-container">
+                                        <p class="lead">{{ post.author.description }}</p>
+                                    </div>
+                                    <br>
+                                    <div class="flex-container">            
+                                        <p class="text-secondary">Se unió el {{ post.author.date_joined }}</p>&nbsp
+                                        <p class="text-secondary">Última vez visto: {{ post.author.last_login }}</p>
+                                        <p class="mb-0">{{ post.author.about }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+            </div>
+            <div class="container my-5">
+                <div class="row justify-content">
+                    <div class="col-lg-6">
+                        {% for post in posts %}
+                        <h2>Ver publicaciones de <strong><a href="{% url 'user-posts' post.author.username %}">{{ view.kwargs.username }}</a></h2>
+                        {% endfor %}
+                        <br>                
+                    </div>
+                </div>            
+                <br>                
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

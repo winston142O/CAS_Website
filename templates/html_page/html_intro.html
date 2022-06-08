@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-informal"></span><h1><span class="section-number">1. </span>Una introducción a HTML<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1><p class="lead">Tutoriales proporcionados por la <a href="https://lenguajehtml.com/html/" target="blank">documentación oficial de HTML</a></p>
+                        <span id="tut-informal"></span><h1><span class="section-number">1.1. </span>¿Qué es HTML?<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Cuando accedemos a una página web, debemos tener en cuenta que lo que realmente está ocurriendo es que nuestro navegador web está pidiendo un documento de texto al sistema (<em>máquina</em>) donde está almacenada esa página web.</p>
+                        <p>En cualquier navegador, existe una opción para ver el <strong>código fuente</strong> de la página web, la cuál nos mostrará exactamente el texto de dicho documento. El navegador normalmente no nos muestra esa información literalmente, sino que la interpreta y va dibujando los elementos de una página web.</p>
+                        <p>El documento que lee el navegador está escrito en un <strong>lenguaje de marcado</strong> llamado <strong>HTML</strong>, que son las siglas de <strong>HyperText Markup Language</strong> (<em>Lenguaje de marcas de hipertexto</em>), o lo que es lo mismo, un lenguaje de etiquetas que permite incluir o hacer referencia a todo tipo de información.</p>
+                    </div>
+                </div>
+            </div>                             
+            <center><img src="https://lenguajehtml.com/html/introduccion/que-es-html/documento-texto-chrome.png" alt="Los navegadores leen documentos de texto en «idioma» HTML" width="800" height="359" loading="lazy"></center>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">                            
+                        <h3 id="qué-es-una-etiqueta-html" tabindex="-1">¿Qué es una etiqueta HTML?</h3>
+                        <p>En el navegador Chrome, puedes pulsar la combinación de teclas <kbd>CTRL</kbd>+<kbd>U</kbd> para ver el código fuente de la página en la que te encuentras. Dicho documento esta formado por <strong>etiquetas</strong>, que son la base del <strong>lenguaje HTML</strong>.</p>
+                        <p>Existen muchas etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha información, dependiendo de la etiqueta que se trate. Las etiquetas HTML tienen la siguiente estructura:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>etiqueta</span><span class="token punctuation">></span></span>contenido<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>etiqueta</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En <strong>HTML</strong> no se puede utilizar cualquier palabra como etiqueta (<em>en el ejemplo anterior, es incorrecto utilizar la etiqueta «etiqueta»</em>). En su lugar, existen una serie de etiquetas concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.</p>
+                        <p>A continuación, utilicemos la etiqueta <code>&lt;strong&gt;</code> (<em>etiqueta utilizada para darle importancia a una palabra sobre el resto</em>) en el siguiente ejemplo:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Dentro de este texto, esta <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>palabra<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span> es más importante que el resto.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Obsérvese que en el ejemplo estamos utilizando dos etiquetas diferentes. La etiqueta <code>&lt;p&gt;</code>, que contiene toda la frase, y la etiqueta <code>&lt;strong&gt;</code>, que contiene sólo la palabra <strong>palabra</strong>. La primera etiqueta, <code>&lt;p&gt;</code>, se utiliza para contener párrafos, mientras que la segunda etiqueta, <code>&lt;strong&gt;</code>, indica la palabra que tiene mayor importancia del texto.</p>
+                        <p>También se habrá observado que se pueden anidar etiquetas, esto es, incluir etiquetas dentro de otras. Es algo que se hace continuamente en HTML y que a medida que avancemos se tornará habitual.</p>
+                        <h3 id="qué-es-la-semántica" tabindex="-1">¿Qué es la semántica?</h3>
+                        <p>Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea semántico y no visual. Con esto queremos decir que todos los aspectos visuales deben dejarse para el apartado de presentación, que se gestiona desde el <a href="http://lenguajecss.com/">lenguaje CSS</a>. En el documento HTML debe aparecer información correctamente individualizada, de modo que al leer una página HTML comprendamos su significado, y si queremos cambiar la apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como <strong>separación de la presentación del contenido</strong>.</p>
+                        <p>Un ejemplo donde se ve claramente esto es con la etiqueta <code>&lt;b&gt;</code> de HTML4 y anteriores. Dicha etiqueta se utilizaba para poner en <strong>negrita</strong> (<em>bold</em>) un texto específico:</p>
+                        <pre class="language-html"><code class="language-html">Hola, quiero resaltar esta <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span>palabra<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>.
+                        </code></pre>
+                        <p>En este caso, se está utilizando una propiedad de <strong>presentación</strong> (<em>visual</em>) en el HTML, algo que no se debe hacer en HTML5. La misión de HTML5 es mantener sólo contenido e información semántica en HTML5. Por ello, la forma de hacerlo en HTML5 es la siguiente:</p>
+                        <pre class="language-html"><code class="language-html">Hola, quiero resaltar esta <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>palabra<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.
+                        </code></pre>
+                        <p>En este nuevo ejemplo, se reemplaza la etiqueta <code>&lt;b&gt;</code> (<em>negrita, característica de presentación</em>) por <code>&lt;strong&gt;</code>, una etiqueta que indica información semántica (<em>importante, característica semántica</em>). De esta forma, en el HTML5 sólo se está añadiendo información particular sobre fragmentos de texto, y si queremos dotar de presentación visual, lo haremos desde CSS:</p>
+                        <pre class="language-css"><code class="language-css"><span class="token selector">strong</span> <span class="token punctuation">{</span>
+                          <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+                          <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">black</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        </code></pre>
+                        <p>De esta forma podríamos cambiar el estilo (<em>negrita, colores, tipo de letra, etc...</em>) independientemente de la información y contenido que existe en el HTML. Incluso podríamos establecer el mismo estilo que en el texto, para que visualmente se vea todo de forma uniforme, pero sin embargo, al leer la página HTML, el navegador sabrá siempre que fragmentos de texto son más importantes, aunque tenga el mismo estilo visual.</p>
+                        <p>El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (<em>o más concretamente, para navegadores</em>), cada vez tendemos más a una Internet capaz de procesar información de forma autónoma. Muestra de ello son, por ejemplo, los robots o crawlers de buscadores como <strong>Googlebot</strong> (<em>el robot de búsqueda de Google</em>) que es capaz de acceder a páginas web para analizar la información de la misma, entenderla e indexarla en su buscador.</p>                        
+                        <span id="tut-informal"></span><h1><span class="section-number">1.2. </span>Estructura de etiqueta HTML<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Como habíamos mencionado, las páginas webs son realmente documentos de texto que contienen información y muchas etiquetas HTML que indican que tipo de contenido se va a mostrar en el navegador al cargar la página web.</p>
+                        <p>La <strong>estructura de las etiquetas HTML</strong> tiene el siguiente formato:</p>
+                    </div>
+                </div>
+            </div>      
+            <center><img src="https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/estructura-etiqueta-html.png" alt="Estructura de una etiqueta HTML" width="600" height="200" loading="lazy"></center>            
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">       
+                        <h3 id="etiqueta-html" tabindex="-1">Etiqueta HTML</h3>
+                        <p>La parte esencial de una etiqueta HTML es lo que se denomina la <strong>etiqueta de apertura</strong>. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los carácteres <code>&lt;</code> y <code>&gt;</code>. Aunque no es terminantemente obligatorio, se recomienda y considera una buena costumbre escribir las etiquetas siempre en minúsculas.</p>
+                        <p>En HTML5 no se puede colocar cualquier palabra como etiqueta, sino que existen una serie específica de etiquetas, cada una con una misión y objetivo diferente. Por ejemplo, la etiqueta <code>&lt;strong&gt;</code>:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Contenido<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Como se puede ver, la mayoría de las etiquetas requieren que se especifique un <strong>cierre de etiqueta</strong> para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra <code>/</code> inmediatamente después del <code>&lt;</code>.</p>
+                        <h3 id="atributo" tabindex="-1">Atributo</h3>
+                        <p>En algunas etiquetas HTML, existen algunos atributos específicos (<em>que pueden ser opcionales u obligatorios</em>). Los atributos determinan cierta información sobre la etiqueta (<em>o su modo de actuar</em>) y generalmente van asociados a un valor determinado. Este par <strong>atributo-valor</strong> se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter <code>&gt;</code> de la etiqueta de apertura:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dato<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Contenido<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En este caso, la etiqueta sería <strong>strong</strong>, el atributo <strong>id</strong>, el valor de <strong>id</strong> sería <strong>dato</strong>, mientras que el contenido de la etiqueta es <strong>Contenido</strong>. Por otro lado, y al igual que las etiquetas, cada atributo tiene una misión y comportamiento concreto. Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre <strong>comillas dobles</strong>.</p>
+                        <p>Existen 3 tipos de atributos dependiendo de sus valores:</p>
+                        <ul>
+                        <li><strong>Conjunto finito de valores</strong>: Son los atributos en los que puedes especificarle una serie de valores limitada. Cualquier otro valor que no sea uno de ellos, no será válido.</li>
+                        <li><strong>Valores libres</strong>: Son los atributos en los que puedes especificar un valor libremente, como una dirección URL o un texto, y no existe una serie de valores específicos para escribir.</li>
+                        <li><strong>Valores booleanos</strong>: Son los atributos que deben tener un valor verdadero (<em>true</em>) o un valor falso (<em>false</em>). En HTML5 estos atributos se escriben sin valor (<em>solo el atributo</em>) si son verdaderos y se omiten para indicar que son falsos.</li>
+                        </ul>
+                        <h3 id="contenido-de-la-etiqueta" tabindex="-1">Contenido de la etiqueta</h3>
+                        <p>En el interior de la etiqueta HTML (<em>después de la etiqueta de apertura y antes de la etiqueta de cierre</em>) se debe colocar la información que queremos que sea afectada por dicha etiqueta. En el siguiente ejemplo se ve como contiene un <strong>fragmento de texto</strong>:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dato<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>clase1<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>es<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Contenido de texto<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Ten en cuenta que una etiqueta puede tener varios pares atributo-valor, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que sobreescribiría al anterior. El orden de los atributos no importa. Más adelante explicaremos que tipos de atributos existen y para que sirven.</p>
+                        <p>Sin embargo, una etiqueta puede contener desde un fragmento de texto hasta un <strong>grupo de etiquetas</strong>. Esto depende mucho de la etiqueta a utilizar, y se verá más adelante en el apartado de etiquetas. Un posible ejemplo sería el siguiente:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pagina<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Contenido importante<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Nótese que dentro de la etiqueta <code>&lt;div&gt;</code> vemos que no sólo hay un fragmento de texto, sino que además incluye otra etiqueta, <code>&lt;strong&gt;</code> en este caso. Esto ocurre en las etiquetas de agrupación, que veremos más adelante.</p>
+                        <h3 id="comentario-html" tabindex="-1">Comentario HTML</h3>
+                        <p>Los <strong>comentarios</strong> son una práctica muy común y habitual en los desarrolladores o programadores. Se basa en introducir breves fragmentos de texto que el navegador ignora y no tendrá en cuenta a la hora de crear la página visualmente, pero que a nosotros nos sirven de ayuda para documentar algún detalle, explicar algo importante o simplemente introducir algún texto que consideramos relevante:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Esto es un comentario de ejemplo que el navegador ignorará --></span>
+                        </code></pre>
+                        <p>Como se puede ver, para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto <code>&lt;!--</code> y <code>--&gt;</code> entre el comentario en cuestión que queramos incluir.</p>                                                               
+                        <span id="tut-informal"></span><h1><span class="section-number">1.3. </span>Atributos comunes en HTML<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Como hemos visto, el HTML está formado por etiquetas. Muchas etiquetas. Cada etiqueta tiene una misión y tarea y contendrá cierto contenido relacionado con su misión. Y además tenemos los <strong>atributos</strong>, que son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene.</p>
+                        <p>En este apartado vamos a ver una lista de <strong>atributos comunes</strong> que pueden ser utilizados en <strong>cualquier etiqueta HTML</strong>:</p>
+                    </div>
+                </div>
+            </div>                        
+            <center><img src="https://i.imgur.com/rbRb4Nj.png"></img></center>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">            
+                        <p>Esta sección no es absolutamente necesaria para usuarios iniciados, y quizás requiera adquirir más práctica con HTML antes de comenzar a leer esta parte.</p>
+                        <h3 id="identificador-de-etiqueta-id" tabindex="-1">Identificador de etiqueta (id)</h3>
+                        <p>En HTML, podemos darle un identificador a una etiqueta HTML y de esta forma darle un nombre. Simplemente, añadimos el atributo <strong>id</strong> y colocamos el nombre como valor de ese atributo. Ese nombre de identificador no debe empezar nunca por un número y puede contener letras mayúsculas, minúsculas, signos especiales (<em>guión, guión bajo...</em>) o números:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pagina<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>articulo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá el contenido de texto del artículo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Los <strong>id</strong> se suelen indicar cuando queremos localizar zonas específicas que <strong>sabemos que no se van a repetir en esa misma página</strong>.</p>
+                        <p>Uno de los detalles importantes de los id, es que no pueden haber dos con el mismo nombre en una página. Ejemplos correctos de id serían «pagina» (<em>para contener toda la página completa</em>), «comentarios» (<em>para contener toda la zona de comentarios de la página</em>) o «header» (<em>para contener la parte con el logo y la cabecera de la página</em>). Lo que debe quedar claro de los ids, es que <strong>no se puede tener el mismo id</strong> en varias etiquetas HTML en una misma página.</p>
+                        <p>Más adelante, en el apartado de <a href="/html/semantica/enlaces-o-hipervinculos">enlaces o hipervínculos</a>, veremos que también podemos utilizarlos para acceder rápidamente, desde un enlace, a esa sección concreta de la página.</p>
+                        <h3 id="clases-de-etiquetas-class" tabindex="-1">Clases de etiquetas (class)</h3>
+                        <p>Las clases funcionan de una forma muy similar a los id, pero son mucho más flexibles. En primer lugar, no tienen la limitación de los ids, por lo que su nombre se puede repetir y no es necesario que aparezca sólo una vez por página.</p>
+                        <p>De hecho, la idea de las clases es establecer géneros o tipos de etiquetas, a los que les asociemos características comunes. Sigamos con el ejemplo anterior:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pagina<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anuncio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>articulo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá el contenido de texto del artículo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anuncio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Obsérvese que, al tener la misma clase «anuncio», podemos realizar acciones para todas las etiquetas de ese tipo y no tener que hacerlo para cada una de ellas por separado. Un ejemplo clásico donde se ve bien su utilidad, es respecto a utilizar <a href="http://lenguajecss.com/css/selectores/selectores-basicos">ids y clases para dar estilo CSS</a>, donde aplicaremos unos estilos concretos a todas las etiquetas HTML con clase «anuncio».</p>
+                        <p>Además, una etiqueta puede tener múltiples clases diferentes, no una sola. Esto nos da más flexibilidad a la hora de crear clases específicas:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pagina<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anuncio primero<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>articulo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá el contenido de texto del artículo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anuncio ultimo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Aquí irá un anuncio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Nótese que en la primera etiqueta del anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>primero</strong>, mientras que en el último anuncio hemos aplicado las clases <strong>anuncio</strong> y <strong>último</strong>. Esto nos permitiría asignar atributos comunes al anuncio en la clase anuncio, y atributos que sólo dependan de la posición donde esta colocado en <strong>primero</strong> y/o <strong>ultimo</strong>.</p>
+                        <blockquote>
+                        <blockquote>
+                        <blockquote>
+                        <p>Recordar siempre que para indicar múltiples clases se debe separar las clases por espacio dentro de un mismoa atributo <strong>class</strong>. No se debe nunca indicar varios atributos <strong>class</strong> en una misma etiqueta, ya que el navegador lo que haría es sobreescribir el valor del último <strong>class</strong> con los de los primeros.</p>
+                        </blockquote>
+                        </blockquote>
+                        </blockquote>
+                        <h3 id="idioma-del-contenido" tabindex="-1">Idioma del contenido</h3>
+                        <p>Mediante el atributo <strong>lang</strong> podemos indicar el idioma del contenido de la etiqueta. El valor de dicho atributo tendrá que ser el <a href="https://es.wikipedia.org/wiki/ISO_639-1">código ISO 639-1</a> del idioma al que queremos hacer referencia. También podemos utilizar el atributo <strong>translate</strong> para indicar si el contenido de un texto es o no traducible:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+                          Hace algunos días fuí a ver la nueva película de <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">translate</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>StarWars<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>.
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>De esta forma, le indicamos al navegador o a herramientas como <strong>Google Translator</strong>, que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre. Por defecto, si no se indica el atributo <strong>translate</strong> en una etiqueta, es como si tuviera el valor <strong>yes</strong> por defecto.</p>
+                        <h3 id="títulos-o-tooltips" tabindex="-1">Títulos o tooltips</h3>
+                        <p>En la mayoría de las etiquetas HTML podemos indicar el atributo <strong>title</strong> para especificar un mensaje de texto que aparezca cuando el usuario detenga el ratón sobre el elemento un instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Gandalf.jpg<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Gandalf el gris, utilizando un portátil para consultar su correo.<span class="token punctuation">"</span></span>
+                            <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>¡Este es Gandalf el gris!<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Es importante no confundir el atributo <strong>title</strong> con el atributo <strong>alt</strong> de las imágenes, que generalmente se confunden porque pueden tener objetivos idénticos, pero no siempre es así. El atributo <strong>alt</strong> debe ser un texto alternativo que describa la imagen en el caso de que no se pueda ver visualmente, mientras que el atributo <strong>title</strong> puede describir la imagen, pero no tiene porque ser una descripción alternativa.</p>
+                        <p>De la misma forma, podemos utilizar el atributo <strong>title</strong> para otros elementos, como por ejemplo, etiquetas <code>&lt;a&gt;</code> (<em>enlaces</em>) u otras.</p>
+                        <h3 id="metadatos-datasets" tabindex="-1">Metadatos (datasets)</h3>
+                        <p>En HTML, veremos que la mayoría de los metadatos (<em>información adicional</em>) se incluyen en la etiqueta <code>&lt;head&gt;</code> del documento HTML. Sin embargo, también se puede incluir metadatos en la propia etiqueta HTML a través de un atributo con prefijo <strong>data-</strong>.</p>
+                        <p>De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente orientada a utilizarse desde Javascript:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>compartir<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://twitter.com/share/?url=https://lenguajehtml.com/<span class="token punctuation">"</span></span>
+                             <span class="token attr-name">data-share</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>43<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Twitter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.facebook.com/sharer/sharer.php?u=https://lenguajehtml.com/<span class="token punctuation">"</span></span>
+                             <span class="token attr-name">data-share</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>66<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Facebook<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://plus.google.com/share?url=https://lenguajehtml.com/<span class="token punctuation">"</span></span>
+                             <span class="token attr-name">data-share</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>38<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Google+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <h3 id="atajo-de-teclado-accesskey" tabindex="-1">Atajo de teclado (accesskey)</h3>
+                        <p>En HTML es posible añadir el atributo <strong>accesskey</strong> para indicar un atajo de teclado que puede pulsar el usuario para activar ese elemento. En el siguiente ejemplo, tenemos 4 elementos: dos campos de texto, un enlace y un botón. Cada uno de ellos tiene su atributo <strong>accesskey</strong> para que cuando el usuario pulse <kbd>ALT</kbd>+<kbd>tecla</kbd>, se active ese elemento:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">accesskey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>N<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Nombre (ALT+N)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- Campo de datos --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">accesskey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Apellidos (ALT+A)<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- Campo de datos --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">accesskey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>L<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Enlace (ALT+L)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!-- Enlace HTML --></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">accesskey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>B<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Botón (ALT+B)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!-- Botón HTML --></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>De esta forma, si pulsamos <kbd>ALT</kbd>+<kbd>N</kbd>, se colocará el foco en el primer campo de texto, si pulsamos <kbd>ALT</kbd>+<kbd>L</kbd> será como si hubieramos pulsado el enlace con el ratón y si pulsamos <kbd>ALT</kbd>+<kbd>B</kbd> se pulsará el botón.</p>
+                        <p>Sin embargo, una de las desventajas de este sistema, es que no está demasiado unificado entre navegadores y sistemas, lo que lo hacen bastante complejo. Por ejemplo, si establecemos un atajo con la tecla <strong>A</strong>, es decir, con el atributo <strong>accesskey</strong> a <strong>A</strong>, tendríamos que pulsar la siguiente combinación de teclas:</p>
+                    </div>
+                </div>
+            </div>                
+            <center><img src="https://i.imgur.com/ByDPTlM.png"></img></center>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">    
+                        <p>Esto hace que la combinación de teclas para un usuario poco familiarizado con este proceso, además de la incertidumbre de no saber que navegador va a utilizar, hagan que este proceso sea poco práctico.</p>
+                        <h3 id="direccionalidad-del-contenido" tabindex="-1">Direccionalidad del contenido</h3>
+                        <p>Existe un atributo <code>dir</code> que permite al desarrollador indicar la direccionalidad del texto en el documento, ideal para idiomas en los que se escribe de derecha a izquierda. El valor por defecto de este atributo es <code>ltr</code> (<em>left to right, de izquierda a derecha</em>), pero podemos modificarlo y establecer el valor <code>rtl</code> (<em>right to left, de derecha a izquierda</em>):</p>
+                        <p><code-sandbox></code-sandbox></p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Esto es un ejemplo de texto con direccionalidad de izquierda a derecha.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rtl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Esto es un ejemplo de texto con direccionalidad de derecha a izquierda.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>También es posible conseguir este efecto utilizando la propiedad CSS <code>direction</code>, que puede establecer su valor a <code>ltr</code> (<em>por defecto</em>) o a <code>rtl</code>.</p>
+                        <h3 id="estilos-en-línea" tabindex="-1">Estilos en línea</h3>
+                        <p>El atributo <code>style</code> es un atributo que se utiliza en las etiquetas HTML para incrustar código CSS directamente en la propia etiqueta. También se suele denominar <a href="http://lenguajecss.com/css/introduccion/como-usar-css#css-embebido">CSS embebido o CSS incrustado</a>.</p>
+                        <p>Aunque generalmente, la mejor forma de aplicar estilos CSS es colocarlos en un documento CSS al margen de la página (<em>lo que garantiza que todo esté bien separado y modularizado</em>), hay situaciones en las que es conveniente o incluso necesario, añadir el código CSS en la propia etiqueta. En ese caso, se haría de la siguiente forma:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Esto es un mensaje con estilos CSS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Nótese que estamos indicando dos reglas CSS dentro de una misma etiqueta. En <a href="http://lenguajecss.com/css/introduccion/como-usar-css">¿Cómo usar CSS?</a> tienes otros métodos para indicar CSS en una página web.</p>                        
+                        <span id="tut-informal"></span><h1><span class="section-number">1.4. </span>Estructura del documento HTML<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Un documento HTML debe tener siempre una estructura inicial, con algunas etiquetas y características obligatorias y otras recomendables. Ese esquema es el siguiente, donde se diferencian tres zonas principales:</p>
+                        <ul>
+                        <li>
+                        <p><strong>Tipo de documento</strong>: En la primera línea del documento HTML debe ir especificado siempre de que tipo de documento HTML se trata. No es absolutamente obligatorio indicarlo (<em>de hecho, hay páginas webs que no lo tienen</em>), pero eso trae algunas consecuencias que veremos más adelante.</p>
+                        </li>
+                        <li>
+                        <p><strong>Head</strong>: En el documento HTML hay una primera sección donde se especificarán todos los <strong>metadatos</strong> del documento, es decir, la parte «que no se ve» directamente en el navegador de forma visual.</p>
+                        </li>
+                        <li>
+                        <p><strong>Body</strong>: La segunda sección es el cuerpo de la página, donde si aparecen todos los elementos que aparecerán visualmente en el navegador del usuario.</p>
+                        </li>
+                        </ul>
+                        <p>Las dos últimas secciones deben estar dentro de la etiqueta <code>&lt;html&gt;</code>, que es la que debe contener cualquier tipo de etiqueta HTML (<em>salvo el tipo de documento, que debe especificarse antes</em>):</p>
+                    </div>
+                </div>
+            </div>
+            <center><img src="https://i.imgur.com/JHXikes.png" alt="Estructura de un documento HTML" width="701" height="497" loading="lazy"></center>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">    
+                        <h3 id="tipo-de-documento" tabindex="-1">Tipo de documento</h3>
+                        <p>Antes de comenzar un documento HTML, en su primera línea, es siempre conveniente indicar el tipo de documento a utilizar. Para indicar que se trata de un <strong>documento HTML5</strong> colocaremos la siguiente linea:</p>
+                        <pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>En versiones anteriores, como <strong>HTML4</strong> o <strong>XHTML</strong>, el tipo de documento se especificaba en la primera línea de la siguiente forma (<em>más compleja</em>):</p>
+                        <pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD XHTML 1.0 Strict//EN"</span>
+                            <span class="token string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</span><span class="token punctuation">></span></span>
+                        </code></pre>
+                        <p>Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea donde se indica el <strong>tipo de documento</strong> del que se trata. De esta forma, el navegador ya está preparado para actuar adaptándose perfectamente a cada tipo de documento.</p>
+                        <p>En el caso de no indicar el tipo de documento en una página HTML, el navegador entra en lo que se llama <strong>Quirk mode</strong> (<em>modo peculiar o modo no estándar</em>), donde se activa un <strong>modo de retrocompatibilidad</strong> con páginas antiguas, que procesará de forma diferente muchas etiquetas HTML o propiedades CSS.</p>
+                        <h3 id="cabecera-html" tabindex="-1">Cabecera HTML</h3>
+                        <p>La zona de la cabecera de una página web es la parte que se incluye en el interior de las etiquetas <code>&lt;head&gt;</code>, que son las primeras etiquetas que se encuentran en el documento y a su vez están dentro de las etiquetas <code>&lt;html&gt;</code> que engloban todo el documento HTML.</p>
+                        <p>En esta zona se indicarán, en su mayoría, <strong>metadatos</strong> como el título y descripción de la página o elementos relacionados que no se representarán visualmente en el navegador del usuario. También es el lugar indicado para incluir etiquetas que relacionen el documento actual con otros documentos externos (<em>por ejemplo, para cargar estilos CSS o scripts</em>).</p>
+                        <h3 id="cuerpo-de-página" tabindex="-1">Cuerpo de página</h3>
+                        <p>La zona del cuerpo de página es la parte que se incluye en el interior de las etiquetas <code>&lt;body&gt;</code>, la segunda parte de un documento HTML, que va inmediatamente después del cierre de la etiqueta <code>&lt;head&gt;</code>. En esta zona se incluyen todas las etiquetas HTML que si tienen repercusión visual en el navegador del usuario, generalmente utilizadas para dibujar secciones o partes de una página.</p>                                            
+                        <span id="tut-informal"></span><h1><span class="section-number">1.5. </span>Validación de errores HTML<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+                        <p>Si estamos empezando con nuestro primer documento HTML y queremos comprobar si hay errores o hemos hecho mal, ¿qué podemos hacer? Los programadores suelen estar acostumbrados a los <strong>lenguajes de programación</strong>, donde si tenemos un error en nuestro código, debemos corregirlo para continuar, ya que en caso contrario no podremos utilizar ese programa.</p>
+                        <p>En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «intuir» lo que se quiso decir y prosiguen con la carga del documento. De esta forma tenemos un método más flexible a errores, pero también es un arma de doble filo donde podemos experimentar problemas derivado de ello.</p>
+                        <h3 id="validador-html5-de-w3c" tabindex="-1">Validador HTML5 de W3C</h3>
+                        <p>Para evitar esto y asegurarnos de que nuestro código está correctamente escrito, podemos utilizar un <strong>Validador HTML</strong>, que no es más que un sistema que analiza nuestro código y nos dice el número de errores que tenemos, junto a una breve descripción del mismo.</p>
+                        <p>Para realizar ese proceso de validación podemos utilizar <a href="https://validator.w3.org/">HTML Validator</a>, de W3C, que contiene <strong>Nu HTML Checker</strong>, un validador de HTML5 aún en fase experimental, pero que actualmente puede ser utilizado sin problemas para este proceso de búsqueda de errores:</p>
+                    </div>
+                </div>
+            </div>  
+            <center><img src="https://i.imgur.com/1jJxcFb.png" alt="Nu HTML Checker, validador HTML5" width="900" height="435" loading="lazy"></center>
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">               
+                        <p>Existen 3 formas de enviar nuestro documento HTML a este validador HTML:</p>
+                        <ul>
+                        <li>
+                        <p><strong>Address</strong>: Indicando la dirección URL de la página que se quiere validar. Obviamente, es necesario que la página esté colgada en Internet.</p>
+                        </li>
+                        <li>
+                        <p><strong>File Upload</strong>: Seleccionando el archivo HTML de nuestro equipo, subirlo al validador y, posterior y finalmente, realizar el proceso de análisis.</p>
+                        </li>
+                        <li>
+                        <p><strong>Text Input</strong>: Escribiendo (<em>o pegando</em>) directamente el código HTML del documento HTML íntegro a analizar.</p>
+                        </li>
+                        </ul>
+                        <p>Además, si nos fijamos en la parte superior de la herramienta de validación, veremos que hay tres casillas disponibles para marcar, con las que podemos agregar nuevas características que se mostrarán tras la validación. Dichas características son las siguientes:</p>
+                        <ul>
+                        <li>
+                        <p><strong>Source</strong>: Nos muestra el código fuente, numerado por líneas. Útil para corregir problemas sobre la marcha o comprobar los errores en las líneas especificadas.</p>
+                        </li>
+                        <li>
+                        <p><strong>Outline</strong>: Nos muestra una especie de árbol o esquema de la página.</p>
+                        </li>
+                        <li>
+                        <p><strong>Image report</strong>: Genera un informe de las imágenes del sitio web, con una miniatura y sus características asociadas.</p>
+                        </li>
+                        </ul>
+                        <p>Es una buena práctica acostumbrarse a utilizar el validador para acostumbrarse a crear código HTML de calidad y sin errores, ya que si tenemos documentos sin errores de validación, es más probable que se vean correctamente en cualquier tipo de dispositivo.</p>
+                        <span id="tut-informal"></span><h1><span class="section-number">1.6. </span><a href="https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/" target="blank">Tabla periódica de HTML5</a><a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1>
+    
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>

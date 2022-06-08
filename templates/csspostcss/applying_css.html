@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SOSTECH&CODE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home_page/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Python, simple y sencillo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Información</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">Sobre Nosotros</a></li>
+                        {% if user.is_authenticated %}
+                            <!--<li class="nav-item"><a class="nav-link" href="#!">Menú</a></li>-->
+                            <li class="nav-item"><a class="nav-link" href="/accounts/profile/">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout/">Cerrar Sesión</a></li>
+                            <div class="dropdown">
+                                <button class="menu-button">Menú</button>
+                                <div class="dropdown-content">
+                                    <a href="/classes/">Clases</a>
+                                    <a href="/forum/">Foro</a>
+                                    <a href="/direct/">Mensajes</a>
+                                </div>
+                            </div>
+                            </div>    
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link" href="/login/">Iniciar Sesión</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://cutewallpaper.org/21/programming-wallpapers-hd/37-Programmer-Code-Wallpaper-Backgrounds-Free-Download.png')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="https://i.imgur.com/Bb059XS.jpg" alt="..." />
+                <!--<h1 class="text-white fs-3 fw-bolder">Python, CSS, HTML</h1>-->
+                <!--<p class="text-white">Con nuestros cursos puedes aprender Python de forma sencilla.</p>-->
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <span id="tut-informal"></span><h1><span class="section-number">3. </span>Aplicando CSS<a class="headerlink" href="#an-informal-introduction-to-python" title="Enlazar permanentemente con este título">¶</a></h1> 
+                        <p class="lead">Ojo, para seguir este tutorial necesitamos tener un <a href="https://www.youtube.com/watch?v=1Ast_vrdRHE">proyecto de Django</a></p>
+                        <p class="mb-0">CSS se suele aplicar a HTML principalmente a la hora de crear un website, para modificar los templates. En este tutorial te explicaremos cómo aplicar CSS a tu proyecto.</p>
+                        <br>
+                        <ul>
+                            <li><strong>Paso 1.</strong> Ubicar nuestra hoja de estilos CSS</li>
+                            <br>
+                            <li style="padding-left: 25px;list-style:none">Dentro de la carpeta madre de nuestro proyecto Django, se encuentra el archivo <code>settings.py</code> el cual utilizamos para customizar nuestro proyecto. Al final de este archivo debemos añadir las siguientes líneas de código:</li>                            
+                            <br>
+                            <center><img src="https://i.imgur.com/yomnTZ0.png"></center>
+                            <br>
+                            <li style="padding-left: 25px;list-style:none">Esto significa que en el <strong>BASE_DIR</strong>de nuestro proyecto (ej: BASE_DIR/Carpeta_madre) se debe encontrar una carpeta llamada <strong>STATIC</strong>la cual contiene nuestras hojas de estilos CSS.</li>  
+                            <br>
+                            <li><strong>Paso 2.</strong> Crear y modificar nuestra hoja de estilos CSS</li>
+                            <li style="padding-left: 25px;list-style:none">Para este paso simplemente tenemos que crear un archivo llamado <strong>estilos.css</strong>, y dentro de este pondremos nuestros estilos, por ejemplo:</li>                            
+                            <br>
+                            <center><img src="https://i.imgur.com/nbkzwUT.png"></center>
+                            <br>
+                            <li style="padding-left: 25px;list-style:none">Como podemos ver, simplemente le ponemos el título al estilo, en este caso "one", y luego abrimos una lista con corchete e introducimos algunas propiedades, una vez tengamos todas nuestras propiedades podemos cerrar la lista.</li>                            
+                            <li><strong>Paso 3.</strong> Aplicar el estilo en HTML</li>
+                            <li style="padding-left: 25px;list-style:none">En nuestro template, debemos introducir al principio <code>load static</code> dentro de una lista de corchete porcentaje, esto, lógicamente cargará el directorio CSS para uso en el template. Luego tenemos que introducir la siguiente línea de código dentro de la cabeza (head) de nuestro template:</li>                            
+                            <br>
+                            <center><img src="https://i.imgur.com/OmpSqag.png"></center>
+                            <br>
+                            <li style="padding-left: 25px;list-style:none">Luego, (dependiendo de lo que vamos a usar, en este caso una lista) añadimos el estilo a nuestro <code>ul</code> de la siguiente forma:</li>           
+                            <br>
+                            <center><img src="https://i.imgur.com/08KYIhn.png"></center>                 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <center><p class="mb-0"><strong>El resultado será:</strong></p></center>
+        <br>
+        <div class="images">
+            <ul class="two">
+                <li><img class="img-fluid" src="https://i.imgur.com/CEDYAD9.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/EiWUpVd.jpg" alt="..." style="padding:12px;"width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/YV8nh6g.jpg" alt="..." style="padding:12px;"width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/8oHo0go.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+                <li><img class="img-fluid" src="https://i.imgur.com/GyFtb6X.jpg" alt="..." style="padding:12px;" width="900" height="900"/></li>
+            </ul>
+        </div>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('https://miro.medium.com/max/1838/1*HLGtY6O2vUHqIyEbWdmBgA.jpeg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; RD Coding Network, 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src='js/scripts.js'></script>
+    </body>
+</html>
