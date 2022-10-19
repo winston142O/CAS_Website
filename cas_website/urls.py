@@ -19,7 +19,8 @@ from django.urls import path, include
 from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url
+from django.urls import re_path as path
+from django.urls import include
 from ajax_select import urls as ajax_select_urls
 
 urlpatterns = [

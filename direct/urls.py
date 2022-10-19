@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import re_path as path
+from django.urls import include
 from direct.views import Inbox, UserSearch, Directs, NewConversation, SendDirect
 urlpatterns = [
    	path('', Inbox, name='inbox'),

@@ -1,5 +1,5 @@
-from django.urls import path, include
-from django.urls import path
+from django.urls import re_path as path
+from django.urls import include
 from .views import (
     CommentDeleteView,
     CommentUpdateView,
